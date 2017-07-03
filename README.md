@@ -1,4 +1,4 @@
-# janiThor
+# janithor
 
 The aim of this project is to provide an easy interface to interact with mesos teardown, resource unreserve and exhibitor clean operations on a dc/os cluster (with and without authentication)
 
@@ -7,7 +7,7 @@ The aim of this project is to provide an easy interface to interact with mesos t
 There are several operations available
 
 ```
-usage: com.stratio.mesos.Cleaner
+usage: com.stratio.mesos.Janithor
  -a <arg>               Active/inactive frameworks (default true)
  -f,--framework <arg>   Framework name
  -h                     Show help
@@ -106,8 +106,8 @@ class Test {
     public static void main(String[] args){
       String url = "https://sso.paas.labs.stratio.com";
       
-      MesosApi mesos = ClientFactory.buildClientApi(url, "secret", MesosApi.class);
-      ExhibitorApi exhibitor = ClientFactory.buildClientApi(url, "secret", ExhibitorApi.class);
+      MesosApi mesos = ApiBuilder.build(url, "secret", MesosApi.class);
+      ExhibitorApi exhibitor = ApiBuilder.build(url, "secret", ExhibitorApi.class);
       
       boolean teardown = mesos.teardown("framework_id");
       boolean cleanup = exhibitor.cleanup("dcos-service-kafka-sec");

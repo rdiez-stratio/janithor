@@ -27,7 +27,7 @@ public class CLI {
                         String[] resources = mesos.findResourcesFor(role, slaveId);
                         for (String resource : resources) {
                             int code = mesos.unreserveResourceFor(slaveId, resource);
-                            System.out.println("Cleaner " + resource + ": " + code);
+                            System.out.println("Janithor " + resource + ": " + code);
                         }
                     });
         }

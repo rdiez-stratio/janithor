@@ -1,6 +1,6 @@
 package com.stratio.mesos.auth;
 
-import com.stratio.mesos.http.Clients;
+import com.stratio.mesos.http.HTTPUtils;
 import com.stratio.mesos.http.CookieInterceptor;
 import okhttp3.*;
 import org.jsoup.Jsoup;
@@ -33,7 +33,7 @@ public class SSOTokenResolver {
         this.redirectionInterceptor = new RedirectionInterceptor();
         this.cookieInterceptor = new CookieInterceptor();
         this.clientBuilder = new OkHttpClient.Builder();
-        this.clientBuilder = Clients.getUnsafeOkHttpClient();
+        this.clientBuilder = HTTPUtils.getUnsafeOkHttpClient();
         this.clientBuilder.addNetworkInterceptor(this.redirectionInterceptor);
         this.clientBuilder.addNetworkInterceptor(this.cookieInterceptor);
         this.clientHttp = clientBuilder.build();

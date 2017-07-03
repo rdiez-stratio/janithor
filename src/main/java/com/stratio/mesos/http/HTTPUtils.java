@@ -16,7 +16,7 @@ import java.security.cert.CertificateException;
 /**
  * Created by alonso on 23/06/17.
  */
-public class Clients {
+public class HTTPUtils {
     public static final String HTTPS_LEADER_MESOS_MARATHON = "https://sso.paas.labs.stratio.com/marathon/";
     public static final String HTTP_LEADER_MESOS_MARATHON = "http://leader.mesos:8080/";
 
@@ -31,7 +31,7 @@ public class Clients {
         Retrofit mesosInterfaceBuilder = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(Clients.getUnsafeOkHttpClient().build())
+                .client(getUnsafeOkHttpClient().build())
                 .build();
 
         return mesosInterfaceBuilder.create(serverInterface);
@@ -46,7 +46,7 @@ public class Clients {
         Retrofit mesosInterfaceBuilder = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(Clients.getUnsafeOkHttpClient("token="+token).build())
+                .client(getUnsafeOkHttpClient("token="+token).build())
                 .build();
 
         return mesosInterfaceBuilder.create(serverInterface);
@@ -62,7 +62,7 @@ public class Clients {
         Retrofit mesosInterfaceBuilder = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(Clients.getUnsafeOkHttpClient(Credentials.basic(principal, secret)).build())
+                .client(getUnsafeOkHttpClient(Credentials.basic(principal, secret)).build())
                 .build();
 
         return mesosInterfaceBuilder.create(serverInterface);

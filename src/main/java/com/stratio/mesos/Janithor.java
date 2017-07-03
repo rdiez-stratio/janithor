@@ -1,6 +1,6 @@
 package com.stratio.mesos;
 
-import com.stratio.mesos.api.ClientFactory;
+import com.stratio.mesos.api.ApiBuilder;
 import com.stratio.mesos.api.ExhibitorApi;
 import com.stratio.mesos.api.MarathonApi;
 import com.stratio.mesos.api.MesosApi;
@@ -9,9 +9,7 @@ import org.apache.commons.cli.*;
 /**
  * Created by alonso on 26/06/17.
  */
-public class Cleaner {
-
-    // private static String dcosToken = null;
+public class Janithor {
 
     public static void main(String[] args) {
         CommandLineParser parser;
@@ -34,7 +32,7 @@ public class Cleaner {
         try {
             cmd = parser.parse(options, args);
             if (cmd.getOptions().length == 0 || cmd.hasOption("h")) {
-                new HelpFormatter().printHelp(Cleaner.class.getCanonicalName(), options);
+                new HelpFormatter().printHelp(Janithor.class.getCanonicalName(), options);
                 return;
             }
 
@@ -86,7 +84,7 @@ public class Cleaner {
 
         } catch (ParseException e) {
             System.out.println("Missing required options");
-            new HelpFormatter().printHelp(Cleaner.class.getCanonicalName(), options);
+            new HelpFormatter().printHelp(Janithor.class.getCanonicalName(), options);
         }
     }
 
@@ -97,14 +95,14 @@ public class Cleaner {
         // token based authentication
         if (cmd.hasOption("t")) {
             authentication = cmd.getOptionValue("t");
-            api = ClientFactory.buildApiClient(authentication, url, client);
+            api = ApiBuilder.build(authentication, url, client);
             // secret based authentication
         } else if (cmd.hasOption("s")) {
             authentication = cmd.getOptionValue("s");
-            api = ClientFactory.buildApiClient(principal, authentication, url, client);
+            api = ApiBuilder.build(principal, authentication, url, client);
             // no authentication
         } else {
-            api = ClientFactory.buildApiClient(url, client);
+            api = ApiBuilder.build(url, client);
         }
 
         // MesosAPi only: Endpoint setup

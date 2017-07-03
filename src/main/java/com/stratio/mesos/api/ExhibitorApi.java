@@ -1,6 +1,6 @@
 package com.stratio.mesos.api;
 
-import com.stratio.mesos.http.Clients;
+import com.stratio.mesos.http.HTTPUtils;
 import com.stratio.mesos.http.ExhibitorInterface;
 import okhttp3.ResponseBody;
 import org.slf4j.Logger;
@@ -19,15 +19,15 @@ public class ExhibitorApi {
     private ExhibitorInterface exhibitorInterface;
 
     public ExhibitorApi(String exhibitorUrl) {
-        this.exhibitorInterface = Clients.buildBasicInterface(exhibitorUrl, ExhibitorInterface.class);
+        this.exhibitorInterface = HTTPUtils.buildBasicInterface(exhibitorUrl, ExhibitorInterface.class);
     }
 
     public ExhibitorApi(String accessToken, String exhibitorUrl) {
-        this.exhibitorInterface = Clients.buildTokenBasedInterface(accessToken, exhibitorUrl, ExhibitorInterface.class);
+        this.exhibitorInterface = HTTPUtils.buildTokenBasedInterface(accessToken, exhibitorUrl, ExhibitorInterface.class);
     }
 
     public ExhibitorApi(String principal, String secret, String exhibitorUrl) {
-        this.exhibitorInterface = Clients.buildSecretBasedInterface(principal, secret, exhibitorUrl, ExhibitorInterface.class);
+        this.exhibitorInterface = HTTPUtils.buildSecretBasedInterface(principal, secret, exhibitorUrl, ExhibitorInterface.class);
     }
 
     /**
@@ -40,7 +40,7 @@ public class ExhibitorApi {
         try {
             mesosCall = exhibitorInterface.delete(serviceName);
             Response<ResponseBody> response = mesosCall.execute();
-            return (response.code() == Clients.HTTP_OK_CODE);
+            return (response.code() == HTTPUtils.HTTP_OK_CODE);
         } catch (IOException e) {
             LOG.info("Exhibitor failure with message " + e.getMessage());
             return false;

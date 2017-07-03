@@ -2,7 +2,7 @@ package com.stratio.mesos.api;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.stratio.mesos.http.Clients;
+import com.stratio.mesos.http.HTTPUtils;
 import com.stratio.mesos.http.MesosInterface;
 import net.thisptr.jackson.jq.JsonQuery;
 import okhttp3.ResponseBody;
@@ -42,17 +42,17 @@ public class MesosApi {
 
     public MesosApi(String mesosMasterUrl) {
         this.endpointsPrefix = EndpointPrefix.EMPTY.toString();
-        this.mesosInterface = Clients.buildBasicInterface(mesosMasterUrl, MesosInterface.class);
+        this.mesosInterface = HTTPUtils.buildBasicInterface(mesosMasterUrl, MesosInterface.class);
     }
 
     public MesosApi(String accessToken, String mesosMasterUrl) {
         this.endpointsPrefix = EndpointPrefix.EMPTY.toString();
-        this.mesosInterface = Clients.buildTokenBasedInterface(accessToken, mesosMasterUrl, MesosInterface.class);
+        this.mesosInterface = HTTPUtils.buildTokenBasedInterface(accessToken, mesosMasterUrl, MesosInterface.class);
     }
 
     public MesosApi(String principal, String secret, String mesosMasterUrl) {
         this.endpointsPrefix = EndpointPrefix.EMPTY.toString();
-        this.mesosInterface = Clients.buildSecretBasedInterface(principal, secret, mesosMasterUrl, MesosInterface.class);
+        this.mesosInterface = HTTPUtils.buildSecretBasedInterface(principal, secret, mesosMasterUrl, MesosInterface.class);
     }
 
     public void setEndpointsPrefix(EndpointPrefix endpointsPrefix) {
@@ -80,7 +80,7 @@ public class MesosApi {
 
             Response<ResponseBody> response = mesosCall.execute();
 
-            if (response.code() == Clients.HTTP_OK_CODE) {
+            if (response.code() == HTTPUtils.HTTP_OK_CODE) {
                 JsonQuery q = JsonQuery.compile(".slaves[]|.id=\""+slaveId+"\"|.reserved_resources_full.\""+role+"\"[]?");
                 JsonNode in = MAPPER.readTree(new String(response.body().bytes()));
                 List<JsonNode> resources = q.apply(in);
@@ -160,7 +160,7 @@ public class MesosApi {
             else mesosCall = mesosInterface.destroyVolumes(getEndpointsPrefix(), slaveId, "[" + resourceJson + "]");
             response = mesosCall.execute();
 
-            if (response.code() == Clients.UNRESERVE_OK_CODE) {
+            if (response.code() == HTTPUtils.UNRESERVE_OK_CODE) {
                 // remove "disk" from JSON before unregistering resource
                 HashMap<String,Object> result = MAPPER.readValue(resourceJson, HashMap.class);
                 result.remove("disk");
@@ -194,7 +194,7 @@ public class MesosApi {
             if (!hasEndpointPrefix()) mesosCall = mesosInterface.teardown(frameworkId);
             else mesosCall = mesosInterface.teardown(getEndpointsPrefix(), frameworkId);
             Response<ResponseBody> response = mesosCall.execute();
-            return (response.code() == Clients.HTTP_OK_CODE);
+            return (response.code() == HTTPUtils.HTTP_OK_CODE);
         } catch (IOException e) {
             LOG.info("Unregister failure with message " + e.getMessage());
             return false;
@@ -231,7 +231,7 @@ public class MesosApi {
 
             Response<ResponseBody> response = mesosCall.execute();
 
-            if (response.code() == Clients.HTTP_OK_CODE) {
+            if (response.code() == HTTPUtils.HTTP_OK_CODE) {
                 String includeInactives = active?" and .active==true":" and .active==false";
                 JsonQuery q = JsonQuery.compile(".frameworks[]|select(.name == \"" + serviceName + "\" and .role == \"" + role + "\" and .principal == \"" + principal + "\""+includeInactives+").id");
                 JsonNode in = MAPPER.readTree(new String(response.body().bytes()));
@@ -278,7 +278,7 @@ public class MesosApi {
             else mesosCall = mesosInterface.findFrameworks(getEndpointsPrefix());
 
             Response<ResponseBody> response = mesosCall.execute();
-            if (response.code() == Clients.HTTP_OK_CODE) {
+            if (response.code() == HTTPUtils.HTTP_OK_CODE) {
                 JsonQuery q = JsonQuery.compile(".frameworks[]|select(.id==\""+frameworkId+"\").tasks[].slave_id");
                 JsonNode in = MAPPER.readTree(new String(response.body().bytes()));
                 List<JsonNode> slaves = q.apply(in);

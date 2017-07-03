@@ -6,19 +6,19 @@ import java.util.Arrays;
 /**
  * Created by alonso on 27/06/17.
  */
-public class ClientFactory {
+public class ApiBuilder {
 
-    public static <T> T buildApiClient(String principal, String secret, String url, Class<T> client) {
+    public static <T> T build(String principal, String secret, String url, Class<T> client) {
         Constructor<?> constructor = findSuitableConstructor(client, 3);
         return instantiateClient(client, constructor, principal, secret, url);
     }
 
-    public static <T> T buildApiClient(String token, String url, Class<T> client) {
+    public static <T> T build(String token, String url, Class<T> client) {
         Constructor<?> constructor = findSuitableConstructor(client, 2);
         return instantiateClient(client, constructor, token, url);
     }
 
-    public static <T> T buildApiClient(String url, Class<T> client) {
+    public static <T> T build(String url, Class<T> client) {
         Constructor<?> constructor = findSuitableConstructor(client, 1);
         return instantiateClient(client, constructor, url);
     }
@@ -45,7 +45,6 @@ public class ClientFactory {
             }
         } else {
             System.out.println("No valid constructor found for client " + client.getCanonicalName());
-            // error, no valid constructor for api client
             return null;
         }
     }

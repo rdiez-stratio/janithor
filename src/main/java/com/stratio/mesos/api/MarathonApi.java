@@ -1,7 +1,7 @@
 package com.stratio.mesos.api;
 
 import com.stratio.mesos.auth.SSOTokenResolver;
-import com.stratio.mesos.http.Clients;
+import com.stratio.mesos.http.HTTPUtils;
 import com.stratio.mesos.http.MarathonInterface;
 import okhttp3.ResponseBody;
 import org.slf4j.Logger;
@@ -20,15 +20,15 @@ public class MarathonApi {
     private MarathonInterface marathonInterface;
 
     public MarathonApi(String mesosMasterUrl) {
-        this.marathonInterface = Clients.buildBasicInterface(mesosMasterUrl, MarathonInterface.class);
+        this.marathonInterface = HTTPUtils.buildBasicInterface(mesosMasterUrl, MarathonInterface.class);
     }
 
     public MarathonApi(String accessToken, String mesosMasterUrl) {
-        this.marathonInterface = Clients.buildTokenBasedInterface(accessToken, mesosMasterUrl, MarathonInterface.class);
+        this.marathonInterface = HTTPUtils.buildTokenBasedInterface(accessToken, mesosMasterUrl, MarathonInterface.class);
     }
 
     public MarathonApi(String principal, String secret, String mesosMasterUrl) {
-        this.marathonInterface = Clients.buildSecretBasedInterface(principal, secret, mesosMasterUrl, MarathonInterface.class);
+        this.marathonInterface = HTTPUtils.buildSecretBasedInterface(principal, secret, mesosMasterUrl, MarathonInterface.class);
     }
 
     public boolean destroy(String serviceName) {
@@ -36,7 +36,7 @@ public class MarathonApi {
         try {
             mesosCall = marathonInterface.destroy(serviceName);
             Response<ResponseBody> response = mesosCall.execute();
-            return (response.code() == Clients.HTTP_OK_CODE);
+            return (response.code() == HTTPUtils.HTTP_OK_CODE);
         } catch (IOException e) {
             LOG.info("Marathon failure with message " + e.getMessage());
             return false;

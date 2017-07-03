@@ -98,7 +98,7 @@
                     <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
-                            <mainClass>com.stratio.mesos.Cleaner</mainClass>
+                            <mainClass>com.stratio.mesos.Janithor</mainClass>
                         </manifest>
                     </archive>
 

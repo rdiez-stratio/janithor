@@ -106,7 +106,7 @@ public class Janithor {
         }
 
         // MesosAPi only: Endpoint setup
-        if (client.getClass().isAssignableFrom(MesosApi.class)) {
+        if (client.isAssignableFrom(MesosApi.class)) {
             if (cmd.hasOption("x")) {
                 ((MesosApi) api).setEndpointsPrefix(MesosApi.EndpointPrefix.valueOf(cmd.getOptionValue("x").toUpperCase()));
             } else {

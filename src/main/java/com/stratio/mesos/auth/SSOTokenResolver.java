@@ -1,7 +1,7 @@
 package com.stratio.mesos.auth;
 
-import com.stratio.mesos.http.HTTPUtils;
 import com.stratio.mesos.http.CookieInterceptor;
+import com.stratio.mesos.http.HTTPUtils;
 import okhttp3.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
@@ -98,16 +98,12 @@ public class SSOTokenResolver {
             log.error("Unable to perform login. Aborting", e);
         }
 
-        String CASPRIVACY =  cookieInterceptor.getCookies().get(0);
-        String TGC = cookieInterceptor.getCookies().get(1);
-        token = cookieInterceptor.getCookies().get(2);
-
-        log.info("JSESSIONID: " + JSESSIONIDCookie);
-        log.info("CASPRIVACY: " + CASPRIVACY);
-        log.info("TGC: " + TGC);
+        token = cookieInterceptor.getCookies().stream()
+                .filter(c -> c.contains("dcos-acs-auth-cookie"))
+                .findFirst()
+                .orElse(null);
         log.info("Oauth Token obtained: " + token);
-
-        return true;
+        return token!=null && !token.isEmpty();
     }
 
     /**

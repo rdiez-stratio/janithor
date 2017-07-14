@@ -1,7 +1,7 @@
 package com.stratio.mesos.auth;
 
-import com.stratio.mesos.http.HTTPUtils;
 import com.stratio.mesos.http.CookieInterceptor;
+import com.stratio.mesos.http.HTTPUtils;
 import okhttp3.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.StringJoiner;
 
 public class SSOTokenResolver {
     private Logger log = LoggerFactory.getLogger(SSOTokenResolver.class);
@@ -45,29 +46,30 @@ public class SSOTokenResolver {
      */
     public boolean authenticate() {
         String[] bodyParams;
+        StringJoiner joiner = new StringJoiner(";");
 
-        log.info("1. GO TO " + baseUrl);
+        log.debug("1. GO TO " + baseUrl);
         Response response1_1 = getRequest(baseUrl);
-        log.info(response1_1.toString());
+        log.debug(response1_1.toString());
 
         String callBackLocation = redirectionInterceptor.getLocationHistory().get(1);
         redirectionInterceptor.clearLocationHistory();
 
-        log.info("2. REDIRECT TO : " + callBackLocation);
+        log.debug("2. REDIRECT TO : " + callBackLocation);
         Response response1_2 = getRequest(callBackLocation);
-        log.info(response1_2.toString());
+        log.debug(response1_2.toString());
 
-        String JSESSIONIDCookie = cookieInterceptor.getCookies().get(0);
+        String[] cookies = cookieInterceptor.getCookies().toArray(new String[cookieInterceptor.getCookies().size()]);
+        for (String item : cookies) joiner.add(item);
         cookieInterceptor.clearCookies();
-
-        log.info("2. COOKIE : " + JSESSIONIDCookie);
+        log.debug("2. COOKIE : " + cookies);
 
         String callBackLocation2 = redirectionInterceptor.getLocationHistory().get(1);
         redirectionInterceptor.clearLocationHistory();
 
-        log.info("3. REDIRECT TO : " + callBackLocation2 + " with JSESSIONID");
-        Response response1_3 = getRequest(callBackLocation2, JSESSIONIDCookie);
-        log.info(response1_3.toString());
+        log.debug("3. REDIRECT TO : " + callBackLocation2 + " with cookies");
+        Response response1_3 = getRequest(callBackLocation2, joiner.toString());
+        log.debug(response1_3.toString());
 
         try {
             bodyParams = parseBodyParams(response1_3.body().string());
@@ -80,8 +82,8 @@ public class SSOTokenResolver {
         try {
             RequestBody formBody = new FormBody.Builder()
                     .add("lt", bodyParams[0]) // lt
-                    .add("_eventId", bodyParams[1]) // event
-                    .add("execution", bodyParams[2]) // execution
+                    .add("_eventId", bodyParams[2]) // event
+                    .add("execution", bodyParams[1]) // execution
                     .add("submit", "LOGIN")
                     .add("username", this.marathonUser)
                     .add("password", this.marathonSecret)
@@ -89,33 +91,23 @@ public class SSOTokenResolver {
 
             Request request = new Request.Builder()
                     .url(lastRedirection)
-                    .addHeader("Cookie", JSESSIONIDCookie)
+                    .addHeader("Cookie", joiner.toString())
                     .post(formBody)
                     .build();
             Response response2_1 = clientHttp.newCall(request).execute();
-            log.info(response2_1.toString());
+            log.debug(response2_1.toString());
         } catch (IOException e) {
             log.error("Unable to perform login. Aborting", e);
         }
 
-        String CASPRIVACY =  cookieInterceptor.getCookies().get(0);
-        String TGC = cookieInterceptor.getCookies().get(1);
-        token = cookieInterceptor.getCookies().get(2);
-
-        log.info("JSESSIONID: " + JSESSIONIDCookie);
-        log.info("CASPRIVACY: " + CASPRIVACY);
-        log.info("TGC: " + TGC);
-        log.info("Oauth Token obtained: " + token);
-
-        return true;
-    }
-
-    /**
-     * Returns the dc/os token as obtained from the cookie (TGC=ysc12874bbklhjs...;cookie=)
-     * @return
-     */
-    public String getRawToken() {
-        return token;
+        token = cookieInterceptor.getCookies().stream()
+                .filter(c -> c.contains("dcos-acs-auth-cookie"))
+                .map(c -> c.replace("dcos-acs-auth-cookie=", ""))
+                .map(c -> c.split(";")[0])
+                .findFirst()
+                .orElse(null);
+        log.debug("OAuth Token obtained: " + token);
+        return token!=null && !token.isEmpty();
     }
 
     /**
@@ -123,7 +115,7 @@ public class SSOTokenResolver {
      * @return
      */
     public String getToken() {
-        return getRawToken().split(";")[0].substring(4);
+        return token;
     }
 
     /**
@@ -159,20 +151,20 @@ public class SSOTokenResolver {
     /**
      * HTTP request execution based on url
      * @param url url to go to
-     * @param cookie to travel as a header
+     * @param cookies to travel as a header
      * @return Server response or null if error
      */
-    private Response getRequest(String url, String cookie) {
+    private Response getRequest(String url, String cookies) {
         Request request;
         try {
-            if (cookie!=null) {
-                request = new Request.Builder().addHeader("Cookie", cookie).url(url).build();
+            if (cookies!=null) {
+                request = new Request.Builder().addHeader("Cookie", cookies).url(url).build();
             } else {
                 request = new Request.Builder().url(url).build();
             }
             return clientHttp.newCall(request).execute();
         } catch (IOException e) {
-            log.error("Unable to get request for url " + url + " and cookie " + cookie, e);
+            log.error("Unable to get request for url " + url + " and cookies " + cookies, e);
             return null;
         }
     }

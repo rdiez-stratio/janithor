@@ -17,9 +17,6 @@ import java.security.cert.CertificateException;
  * Created by alonso on 23/06/17.
  */
 public class HTTPUtils {
-    public static final String HTTPS_LEADER_MESOS_MARATHON = "https://sso.paas.labs.stratio.com/marathon/";
-    public static final String HTTP_LEADER_MESOS_MARATHON = "http://leader.mesos:8080/";
-
     public static final int HTTP_OK_CODE = 200;
     public static final int UNRESERVE_OK_CODE = 202;
 
@@ -46,7 +43,22 @@ public class HTTPUtils {
         Retrofit mesosInterfaceBuilder = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(getUnsafeOkHttpClient("token="+token).build())
+                .client(getUnsafeOkHttpClient("Authorization", "token="+token).build())
+                .build();
+
+        return mesosInterfaceBuilder.create(serverInterface);
+    }
+
+    /**
+     * Builds an authenticated REST interface using a dcos token passed with dcos-acs-auth-cookie
+     * @param token DC/OS Authorization token
+     * @return the authenticated REST interface
+     */
+    public static <T> T buildCookieBasedInterface(String token, String baseUrl, Class<T> serverInterface) {
+        Retrofit mesosInterfaceBuilder = new Retrofit.Builder()
+                .baseUrl(baseUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(getUnsafeOkHttpClient("Cookie", "dcos-acs-auth-cookie="+token).build())
                 .build();
 
         return mesosInterfaceBuilder.create(serverInterface);
@@ -62,7 +74,7 @@ public class HTTPUtils {
         Retrofit mesosInterfaceBuilder = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(getUnsafeOkHttpClient(Credentials.basic(principal, secret)).build())
+                .client(getUnsafeOkHttpClient("Authorization", Credentials.basic(principal, secret)).build())
                 .build();
 
         return mesosInterfaceBuilder.create(serverInterface);
@@ -73,7 +85,7 @@ public class HTTPUtils {
      * @return HTTP client (no client SSL verification)
      */
     public static OkHttpClient.Builder getUnsafeOkHttpClient() {
-        return getUnsafeOkHttpClient(null);
+        return getUnsafeOkHttpClient(null, null);
     }
 
     /**
@@ -81,7 +93,7 @@ public class HTTPUtils {
      * @param token DC/OS token authentication
      * @return HTTP client (no client SSL verification)
      */
-    public static OkHttpClient.Builder getUnsafeOkHttpClient(String token) {
+    public static OkHttpClient.Builder getUnsafeOkHttpClient(String header, String token) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
 
         try {
@@ -90,7 +102,7 @@ public class HTTPUtils {
                     Request request = chain.request();
                     if (token != null) {
                         Request.Builder requestBuilder = request.newBuilder()
-                                .addHeader("Authorization", token);
+                                .addHeader(header, token);
                         Request newRequest = requestBuilder.build();
 
                         return chain.proceed(newRequest);
@@ -98,7 +110,6 @@ public class HTTPUtils {
                     return chain.proceed(request);
                 };
 
-                builder.followRedirects(true);
                 builder.addNetworkInterceptor(mTokenInterceptor);
             }
 
@@ -126,6 +137,8 @@ public class HTTPUtils {
 
             builder.sslSocketFactory(sslSocketFactory, (X509TrustManager)trustAllCerts[0]);
             builder.hostnameVerifier((hostname, session) -> true);
+            builder.followRedirects(true);
+            builder.retryOnConnectionFailure(true);
 
             return builder;
         } catch (Exception e) {

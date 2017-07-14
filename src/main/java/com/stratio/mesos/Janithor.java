@@ -60,10 +60,10 @@ public class Janithor {
             String operation = cmd.getOptionValue("o");
             switch (operation) {
                 case "lookup":
-                    CLI.lookup(mesos, principal, role, serviceName);
+                    CLI.lookup(mesos, principal, role, serviceName, active);
                     break;
                 case "teardown":
-                    CLI.teardown(mesos, principal, role, serviceName);
+                    CLI.teardown(mesos, principal, role, serviceName, active);
                     break;
                 case "unreserve":
                     CLI.unreserve(mesos, principal, role, serviceName, active);

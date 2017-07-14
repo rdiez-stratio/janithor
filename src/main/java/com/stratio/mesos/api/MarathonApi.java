@@ -24,7 +24,7 @@ public class MarathonApi {
     }
 
     public MarathonApi(String accessToken, String mesosMasterUrl) {
-        this.marathonInterface = HTTPUtils.buildTokenBasedInterface(accessToken, mesosMasterUrl, MarathonInterface.class);
+        this.marathonInterface = HTTPUtils.buildCookieBasedInterface(accessToken, mesosMasterUrl, MarathonInterface.class);
     }
 
     public MarathonApi(String principal, String secret, String mesosMasterUrl) {
@@ -36,6 +36,7 @@ public class MarathonApi {
         try {
             mesosCall = marathonInterface.destroy(serviceName);
             Response<ResponseBody> response = mesosCall.execute();
+            LOG.info("destroy " + response.message());
             return (response.code() == HTTPUtils.HTTP_OK_CODE);
         } catch (IOException e) {
             LOG.info("Marathon failure with message " + e.getMessage());

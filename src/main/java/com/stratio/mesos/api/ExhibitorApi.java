@@ -40,6 +40,7 @@ public class ExhibitorApi {
         try {
             mesosCall = exhibitorInterface.delete(serviceName);
             Response<ResponseBody> response = mesosCall.execute();
+            LOG.info(response.message());
             return (response.code() == HTTPUtils.HTTP_OK_CODE);
         } catch (IOException e) {
             LOG.info("Exhibitor failure with message " + e.getMessage());

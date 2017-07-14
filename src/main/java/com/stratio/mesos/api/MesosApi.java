@@ -79,7 +79,7 @@ public class MesosApi {
             else mesosCall = mesosInterface.findResources(getEndpointsPrefix());
 
             Response<ResponseBody> response = mesosCall.execute();
-
+            LOG.info("findResourcesFor " + response.message());
             if (response.code() == HTTPUtils.HTTP_OK_CODE) {
                 JsonQuery q = JsonQuery.compile(".slaves[]|.id=\""+slaveId+"\"|.reserved_resources_full.\""+role+"\"[]?");
                 JsonNode in = MAPPER.readTree(new String(response.body().bytes()));
@@ -159,7 +159,7 @@ public class MesosApi {
             if (!hasEndpointPrefix()) mesosCall = mesosInterface.destroyVolumes(slaveId, "[" + resourceJson + "]");
             else mesosCall = mesosInterface.destroyVolumes(getEndpointsPrefix(), slaveId, "[" + resourceJson + "]");
             response = mesosCall.execute();
-
+            LOG.info("unreserveVolumesFor " + response.message());
             if (response.code() == HTTPUtils.UNRESERVE_OK_CODE) {
                 // remove "disk" from JSON before unregistering resource
                 HashMap<String,Object> result = MAPPER.readValue(resourceJson, HashMap.class);
@@ -194,6 +194,7 @@ public class MesosApi {
             if (!hasEndpointPrefix()) mesosCall = mesosInterface.teardown(frameworkId);
             else mesosCall = mesosInterface.teardown(getEndpointsPrefix(), frameworkId);
             Response<ResponseBody> response = mesosCall.execute();
+            LOG.info("teardown " + response.message());
             return (response.code() == HTTPUtils.HTTP_OK_CODE);
         } catch (IOException e) {
             LOG.info("Unregister failure with message " + e.getMessage());
@@ -230,7 +231,7 @@ public class MesosApi {
             else mesosCall = mesosInterface.findFrameworks(getEndpointsPrefix());
 
             Response<ResponseBody> response = mesosCall.execute();
-
+            LOG.info("findFrameworkId " + response.message());
             if (response.code() == HTTPUtils.HTTP_OK_CODE) {
                 String includeInactives = active?" and .active==true":" and .active==false";
                 JsonQuery q = JsonQuery.compile(".frameworks[]|select(.name == \"" + serviceName + "\" and .role == \"" + role + "\" and .principal == \"" + principal + "\""+includeInactives+").id");
@@ -278,6 +279,7 @@ public class MesosApi {
             else mesosCall = mesosInterface.findFrameworks(getEndpointsPrefix());
 
             Response<ResponseBody> response = mesosCall.execute();
+            LOG.info("findSlavesForFramework " + response.message());
             if (response.code() == HTTPUtils.HTTP_OK_CODE) {
                 JsonQuery q = JsonQuery.compile(".frameworks[]|select(.id==\""+frameworkId+"\").tasks[].slave_id");
                 JsonNode in = MAPPER.readTree(new String(response.body().bytes()));

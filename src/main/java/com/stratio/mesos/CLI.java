@@ -85,14 +85,14 @@ public class CLI {
     }
 
     public static String dcosToken(String url, String user, String pass) {
-        String token = MarathonApi.obtainToken(user, pass, url);
+        String token = MarathonApi.obtainToken(user, pass, url + "/login?firstUser=false");
         println(token);
         return token;
     }
 
     private static String[] findFrameworkIds(MesosApi mesos, String principal, String role, String serviceName, boolean active) {
         String[] frameworkIds;
-        if (principal==null && role==null) {
+        if (role==null) {
             frameworkIds = new String[]{serviceName};
         } else {
             frameworkIds = mesos.findFrameworkId(serviceName, role, principal, active).orElse(new String[]{});

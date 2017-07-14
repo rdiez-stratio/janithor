@@ -36,11 +36,16 @@ public class CLI {
 
     // Mesos framework teardown
     public static void teardown(MesosApi mesos, String principal, String role, String serviceName, boolean active) {
-        String[] frameworkIds = findFrameworkIds(mesos, principal, role, serviceName, active);
-        println("Found " + frameworkIds.length + " frameworks");
-        for (String frameworkId : frameworkIds) {
-            boolean teardown = mesos.teardown(frameworkId);
-            println("Teardown "+frameworkId+" returned " + teardown);
+        if (role==null) {
+            boolean teardown = mesos.teardown(serviceName);
+            println("Teardown "+serviceName+" returned " + teardown);
+        } else {
+            String[] frameworkIds = findFrameworkIds(mesos, principal, role, serviceName, active);
+            println("Found " + frameworkIds.length + " frameworks");
+            for (String frameworkId : frameworkIds) {
+                boolean teardown = mesos.teardown(frameworkId);
+                println("Teardown "+frameworkId+" returned " + teardown);
+            }
         }
     }
 
@@ -53,7 +58,6 @@ public class CLI {
     // transform ppal, role and framework into FrameworkId
     public static void lookup(MesosApi mesos, String principal, String role, String serviceName, boolean active) {
         String[] frameworkIds = mesos.findFrameworkId(serviceName, role, principal, active).orElse(new String[]{});
-        println("Found " + frameworkIds.length + " frameworks");
         for (String frameworkId : frameworkIds) {
             println(frameworkId);
         }

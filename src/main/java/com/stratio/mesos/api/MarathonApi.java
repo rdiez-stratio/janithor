@@ -35,13 +35,28 @@ public class MarathonApi {
         Call<ResponseBody> mesosCall;
         try {
             mesosCall = marathonInterface.destroy(serviceName);
-            Response<ResponseBody> response = mesosCall.execute();
-            LOG.info("destroy " + response.message());
-            return (response.code() == HTTPUtils.HTTP_OK_CODE);
+            return parseResponseBody(mesosCall);
         } catch (IOException e) {
             LOG.info("Marathon failure with message " + e.getMessage());
             return false;
         }
+    }
+
+    public boolean destroy(String cookie, String serviceName) {
+        Call<ResponseBody> mesosCall;
+        try {
+            mesosCall = marathonInterface.destroy(cookie, serviceName);
+            return parseResponseBody(mesosCall);
+        } catch (IOException e) {
+            LOG.info("Marathon failure with message " + e.getMessage());
+            return false;
+        }
+    }
+
+    private boolean parseResponseBody(Call<ResponseBody> mesosCall) throws IOException {
+        Response<ResponseBody> response = mesosCall.execute();
+        LOG.info("destroy " + response.message());
+        return (response.code() == HTTPUtils.HTTP_OK_CODE);
     }
 
     public static String obtainToken(String user, String password, String ssoUrl) {

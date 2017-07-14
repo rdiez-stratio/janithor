@@ -54,7 +54,6 @@ public class MarathonApi {
 
         if (authenticated) {
             String token = authenticator.getToken();
-            System.out.println("Token is " + token);
             return token;
         } else {
             return null;

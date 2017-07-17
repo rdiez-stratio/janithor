@@ -55,7 +55,6 @@ public class MarathonApi {
 
     private boolean parseResponseBody(Call<ResponseBody> mesosCall) throws IOException {
         Response<ResponseBody> response = mesosCall.execute();
-        LOG.info("destroy " + response.message());
         return (response.code() == HTTPUtils.HTTP_OK_CODE);
     }
 

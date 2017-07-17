@@ -238,12 +238,6 @@ public class MesosApi {
                 JsonNode in = MAPPER.readTree(new String(response.body().bytes()));
                 List<JsonNode> json = q.apply(in);
 
-                // might be a completed framework
-                if (json.isEmpty()) {
-                    q = JsonQuery.compile(".completed_frameworks[]|select(.name == \"" + serviceName + "\" and .role == \"" + role + "\" and .principal == \"" + principal + "\").id");
-                    json = q.apply(in);
-                }
-
                 if (json.size()>0) {
                     frameworkId = Optional.of(json.stream()
                             .map(fwId -> fwId.toString().replace("\"", ""))

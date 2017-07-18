@@ -1,10 +1,9 @@
 package com.stratio.mesos.api;
 
-import com.stratio.mesos.http.HTTPUtils;
 import com.stratio.mesos.http.ExhibitorInterface;
+import com.stratio.mesos.http.HTTPUtils;
 import okhttp3.ResponseBody;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -14,7 +13,7 @@ import java.io.IOException;
  * Created by alonso on 23/06/17.
  */
 public class ExhibitorApi {
-    private static final Logger LOG = LoggerFactory.getLogger(ExhibitorApi.class);
+    final static Logger LOG = Logger.getLogger(ExhibitorApi.class);
     
     private ExhibitorInterface exhibitorInterface;
 

@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.1 (upcoming)
+## 0.1.1 (July 18, 2017)
 
 * Restored completed_frameworks search
 * Non-provided slf4 dependency

@@ -1,0 +1,6641 @@
+{
+  "slaves": [
+    {
+      "id": "80f0fb53-95a0-409b-a78d-ca0e002cc289-S6",
+      "pid": "slave(1)@10.200.0.54:5051",
+      "hostname": "10.200.0.54",
+      "registered_time": 1.5008992E9,
+      "reregistered_time": 1.5008992E9,
+      "resources": {
+        "disk": 22206,
+        "mem": 30989,
+        "gpus": 0,
+        "cpus": 8,
+        "ports": [
+          "1025-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-32000"
+        ]
+      },
+      "used_resources": {
+        "disk": 768,
+        "mem": 4864,
+        "gpus": 0,
+        "cpus": 4.5
+      },
+      "offered_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "reserved_resources": {
+        "zookeeperstable": {
+          "disk": 0,
+          "mem": 3072,
+          "gpus": 0,
+          "cpus": 0
+        },
+        "elasticsearchstratio-3-role": {
+          "disk": 1000,
+          "mem": 4096,
+          "gpus": 0,
+          "cpus": 0.5,
+          "ports": [
+            "9300-9300",
+            "31500-31500"
+          ]
+        },
+        "elasticsearchstratio-role": {
+          "disk": 1000,
+          "mem": 4096,
+          "gpus": 0,
+          "cpus": 0.5,
+          "ports": [
+            "1025-1025",
+            "31502-31502"
+          ]
+        },
+        "zookeeperqa": {
+          "disk": 0,
+          "mem": 3072,
+          "gpus": 0,
+          "cpus": 0
+        },
+        "postgres": {
+          "disk": 1536,
+          "mem": 512,
+          "gpus": 0,
+          "cpus": 1
+        },
+        "elasticsearchstratio-2-role": {
+          "disk": 1000,
+          "mem": 4096,
+          "gpus": 0,
+          "cpus": 0.5,
+          "ports": [
+            "1026-1026",
+            "31504-31504"
+          ]
+        },
+        "elasticsearchstratio-1-role": {
+          "disk": 100,
+          "mem": 1024,
+          "gpus": 0,
+          "cpus": 0.5,
+          "ports": [
+            "31508-31508"
+          ]
+        },
+        "zookeeperkafka": {
+          "disk": 256,
+          "mem": 3072,
+          "gpus": 0,
+          "cpus": 1
+        }
+      },
+      "unreserved_resources": {
+        "disk": 17314,
+        "mem": 7949,
+        "gpus": 0,
+        "cpus": 4,
+        "ports": [
+          "1027-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-9299",
+          "9301-31499",
+          "31501-31501",
+          "31503-31503",
+          "31505-31507",
+          "31509-32000"
+        ]
+      },
+      "attributes": {
+        "label": "all"
+      },
+      "active": true,
+      "version": "1.0.3",
+      "reserved_resources_full": {
+        "zookeeperstable": [
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 3072
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            }
+          }
+        ],
+        "elasticsearchstratio-3-role": [
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 9300,
+                  "end": 9300
+                },
+                {
+                  "begin": 31500,
+                  "end": 31500
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "6915a7a9-d7a8-401f-952d-ae200baa8950"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 4096
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "8cf4c21c-9ca2-4ecb-839c-bd2f21a1c55e"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "c5d7cdcd-4af8-4472-aec5-2eee51814aa8"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1000
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "2b912758-9616-4c01-8a54-6d6f572f105c"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "73edece7-9c0a-45b3-8e33-86e53e5d4d46",
+                "principal": "elasticsearchstratio-3-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          }
+        ],
+        "elasticsearchstratio-role": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "663567d8-f9e0-4fd1-a8e4-f67060e2eaa1"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 4096
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "cf5c9d01-f865-4e0b-a364-08852a4eb4f8"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 1025,
+                  "end": 1025
+                },
+                {
+                  "begin": 31502,
+                  "end": 31502
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "808e74ec-55da-4c44-b616-4b1918f55574"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1000
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "20076c96-4c7f-4302-98b4-ce1889ab9839"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "fb794097-79d7-4539-bf80-de3911339e85",
+                "principal": "elasticsearchstratio-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          }
+        ],
+        "zookeeperqa": [
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 3072
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            }
+          }
+        ],
+        "postgres": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "71401e66-585c-4e1b-8c12-2895ce719756",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "99f31256-47f3-42ae-856f-c605b71fc94e",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "29e7bbb1-db7f-4391-91c7-3b0dcc594722",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "4c9304fc-3cb7-44a1-8c19-cad18de5ca77",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "b45c20cb-1b59-4fe6-b53e-a04f914dd5ad",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 512
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "f1460c90-d7ea-4268-be96-bf07eb65e263",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          }
+        ],
+        "elasticsearchstratio-2-role": [
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 1026,
+                  "end": 1026
+                },
+                {
+                  "begin": 31504,
+                  "end": 31504
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "e9963bf5-916d-408b-b587-6cb1e665cbc0"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "a36dc6bf-73bd-4171-b467-46f9d11fb83a"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1000
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "f83cc734-6cef-4eac-bdcd-488e48c1725f"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "7a704675-f051-4ed1-ae46-116bc3b22909",
+                "principal": "elasticsearchstratio-2-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "container-path"
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 4096
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "af5b67fa-c282-4034-a04f-8ccb117409eb"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "elasticsearchstratio-1-role": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "c08a4b61-6136-4e95-8121-497adfddf7f8"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1024
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "ab1d2822-9473-4663-88f5-8db9b78c7c28"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 31508,
+                  "end": 31508
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "d0e8b107-0751-40e3-9fad-da09168d2fc3"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 100
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "33f961b8-d355-45dd-8ae1-b806747585b6"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "7b0caaf1-3b49-42d9-9d82-8db29b704367",
+                "principal": "elasticsearchstratio-1-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          }
+        ],
+        "zookeeperkafka": [
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperkafka",
+            "reservation": {
+              "principal": "zookeeperkafka"
+            },
+            "disk": {
+              "persistence": {
+                "id": "d7fa28c9-e3d8-4e1b-bdbb-c2bede7fa655",
+                "principal": "zookeeperkafka"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 3072
+            },
+            "role": "zookeeperkafka",
+            "reservation": {
+              "principal": "zookeeperkafka"
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1
+            },
+            "role": "zookeeperkafka",
+            "reservation": {
+              "principal": "zookeeperkafka"
+            }
+          }
+        ]
+      },
+      "used_resources_full": [
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 0.5
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          },
+          "disk": {
+            "persistence": {
+              "id": "b45c20cb-1b59-4fe6-b53e-a04f914dd5ad",
+              "principal": "postgres"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "index"
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          },
+          "disk": {
+            "persistence": {
+              "id": "4c9304fc-3cb7-44a1-8c19-cad18de5ca77",
+              "principal": "postgres"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "wal"
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          },
+          "disk": {
+            "persistence": {
+              "id": "f1460c90-d7ea-4268-be96-bf07eb65e263",
+              "principal": "postgres"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "data"
+            }
+          }
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 4
+          },
+          "role": "*"
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 4608
+          },
+          "role": "*"
+        }
+      ],
+      "offered_resources_full": []
+    },
+    {
+      "id": "80f0fb53-95a0-409b-a78d-ca0e002cc289-S2",
+      "pid": "slave(1)@10.200.0.57:5051",
+      "hostname": "10.200.0.57",
+      "registered_time": 1.5008992E9,
+      "reregistered_time": 1.50090074E9,
+      "resources": {
+        "disk": 27568,
+        "mem": 30989,
+        "gpus": 0,
+        "cpus": 8,
+        "ports": [
+          "1025-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-32000"
+        ]
+      },
+      "used_resources": {
+        "disk": 1792,
+        "mem": 14208,
+        "gpus": 0,
+        "cpus": 6,
+        "ports": [
+          "1025-1025",
+          "8621-8621"
+        ]
+      },
+      "offered_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "reserved_resources": {
+        "zookeeperkafka": {
+          "disk": 256,
+          "mem": 3072,
+          "gpus": 0,
+          "cpus": 1
+        },
+        "zookeeperqa": {
+          "disk": 512,
+          "mem": 3072,
+          "gpus": 0,
+          "cpus": 1
+        },
+        "postgres": {
+          "disk": 5376,
+          "mem": 2048,
+          "gpus": 0,
+          "cpus": 0.5
+        },
+        "zookeeperstable": {
+          "disk": 1280,
+          "mem": 18432,
+          "gpus": 0,
+          "cpus": 3
+        }
+      },
+      "unreserved_resources": {
+        "disk": 20144,
+        "mem": 4365,
+        "gpus": 0,
+        "cpus": 2.5,
+        "ports": [
+          "1025-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-32000"
+        ]
+      },
+      "attributes": {
+        "label": "all"
+      },
+      "active": true,
+      "version": "1.0.3",
+      "reserved_resources_full": {
+        "zookeeperkafka": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1
+            },
+            "role": "zookeeperkafka",
+            "reservation": {
+              "principal": "zookeeperkafka"
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 3072
+            },
+            "role": "zookeeperkafka",
+            "reservation": {
+              "principal": "zookeeperkafka"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperkafka",
+            "reservation": {
+              "principal": "zookeeperkafka"
+            },
+            "disk": {
+              "persistence": {
+                "id": "ab5d62d2-30c6-44e4-9b5c-c49817f4969d",
+                "principal": "zookeeperkafka"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          }
+        ],
+        "zookeeperqa": [
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            },
+            "disk": {
+              "persistence": {
+                "id": "0b9c0df7-fd5f-48c2-9ad6-997c2841f063",
+                "principal": "zookeeperqa"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 3072
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            },
+            "disk": {
+              "persistence": {
+                "id": "8591c907-8ad4-4a37-ad38-82a1c15a6c91",
+                "principal": "zookeeperqa"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            }
+          }
+        ],
+        "postgres": [
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "49836ebe-8ad5-4a57-9d99-430cbf6067f7",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "a6483496-36fc-425c-83b5-8fd6cde5d97c",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 2048
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "6713c4da-aa7a-43dd-9b94-2418ea26b793",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "45e90079-edef-4060-a765-a6d7758a8d4d",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "4cc911ee-35f8-4885-bee1-ed11df767318",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "213692fd-6f00-42c6-b242-e286c9b78bc3",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "9ff20139-1322-49bc-9838-0be778565143",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "36c8d79b-b72e-4bef-8ec1-89c81c895b3f",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "1bb7fc01-b5e0-470f-b8f3-b04e026492d1",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "dc44ed72-f145-496f-9d96-c0f8dce3700c",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "56a88529-5791-41bf-ae66-dbd21cb96ee3",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "b0809cd8-5aaa-4906-9e7c-d0b8b28ecf25",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "c2c74095-01aa-436d-83c1-b517fa3c86d9",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "5a37ecb8-4b5b-43e3-8c18-47caa23ca431",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "8824d6a5-d9b6-4c91-98b0-022ef4f50198",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "17eccd80-9a98-4164-a280-415adfbbe29b",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "b53a05cd-24dd-427d-aec5-6f0b39a62dcd",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "659c8720-8624-4245-ad7c-5398823813dd",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "59161392-58ab-4a5c-ba91-571e53ccd868",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "c36bdbb8-1fa9-4e6f-9fa4-1d4547d6ca8b",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "c2c05a93-9046-47d2-9b06-aaa1fee78f05",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          }
+        ],
+        "zookeeperstable": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 3
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 18432
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "73b8eb6e-f846-4e57-b002-01797131c716",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "0bf3cbbe-9cb0-4d34-8643-6572d38d4949",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "da59bd0c-8778-4d17-9047-043510a5ae89",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "e5d48074-4289-48a2-8215-a7390c5e11cb",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "72cfdae9-41a5-4c15-88f9-72969fc00337",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          }
+        ]
+      },
+      "used_resources_full": [
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 1
+          },
+          "role": "zookeeperqa",
+          "reservation": {
+            "principal": "zookeeperqa"
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 3072
+          },
+          "role": "zookeeperqa",
+          "reservation": {
+            "principal": "zookeeperqa"
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "zookeeperqa",
+          "reservation": {
+            "principal": "zookeeperqa"
+          },
+          "disk": {
+            "persistence": {
+              "id": "8591c907-8ad4-4a37-ad38-82a1c15a6c91",
+              "principal": "zookeeperqa"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "data"
+            }
+          }
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 1.5
+          },
+          "role": "*"
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 1664
+          },
+          "role": "*"
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 2
+          },
+          "role": "zookeeperstable",
+          "reservation": {
+            "principal": "zookeeperstable"
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 6144
+          },
+          "role": "zookeeperstable",
+          "reservation": {
+            "principal": "zookeeperstable"
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "zookeeperstable",
+          "reservation": {
+            "principal": "zookeeperstable"
+          },
+          "disk": {
+            "persistence": {
+              "id": "72cfdae9-41a5-4c15-88f9-72969fc00337",
+              "principal": "zookeeperstable"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "data"
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "zookeeperstable",
+          "reservation": {
+            "principal": "zookeeperstable"
+          },
+          "disk": {
+            "persistence": {
+              "id": "e5d48074-4289-48a2-8215-a7390c5e11cb",
+              "principal": "zookeeperstable"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "data"
+            }
+          }
+        },
+        {
+          "name": "ports",
+          "type": "RANGES",
+          "ranges": {
+            "range": [
+              {
+                "begin": 1025,
+                "end": 1025
+              },
+              {
+                "begin": 8621,
+                "end": 8621
+              }
+            ]
+          },
+          "role": "*"
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 1
+          },
+          "role": "zookeeperkafka",
+          "reservation": {
+            "principal": "zookeeperkafka"
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 3072
+          },
+          "role": "zookeeperkafka",
+          "reservation": {
+            "principal": "zookeeperkafka"
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "zookeeperkafka",
+          "reservation": {
+            "principal": "zookeeperkafka"
+          },
+          "disk": {
+            "persistence": {
+              "id": "ab5d62d2-30c6-44e4-9b5c-c49817f4969d",
+              "principal": "zookeeperkafka"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "data"
+            }
+          }
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 0.5
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          },
+          "disk": {
+            "persistence": {
+              "id": "59161392-58ab-4a5c-ba91-571e53ccd868",
+              "principal": "postgres"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "data"
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          },
+          "disk": {
+            "persistence": {
+              "id": "c36bdbb8-1fa9-4e6f-9fa4-1d4547d6ca8b",
+              "principal": "postgres"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "index"
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          },
+          "disk": {
+            "persistence": {
+              "id": "c2c05a93-9046-47d2-9b06-aaa1fee78f05",
+              "principal": "postgres"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "wal"
+            }
+          }
+        }
+      ],
+      "offered_resources_full": []
+    },
+    {
+      "id": "80f0fb53-95a0-409b-a78d-ca0e002cc289-S0",
+      "pid": "slave(1)@10.200.0.63:5051",
+      "hostname": "10.200.0.63",
+      "registered_time": 1.5008992E9,
+      "reregistered_time": 1.5008992E9,
+      "resources": {
+        "disk": 36208,
+        "mem": 6799,
+        "gpus": 0,
+        "cpus": 4,
+        "ports": [
+          "1-21",
+          "23-5050",
+          "5052-32000"
+        ]
+      },
+      "used_resources": {
+        "disk": 0,
+        "mem": 1024,
+        "gpus": 0,
+        "cpus": 2,
+        "ports": [
+          "80-80",
+          "443-443",
+          "9090-9091",
+          "10000-10100"
+        ]
+      },
+      "offered_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "reserved_resources": {
+        "slave_public": {
+          "disk": 36208,
+          "mem": 6799,
+          "gpus": 0,
+          "cpus": 4,
+          "ports": [
+            "1-21",
+            "23-5050",
+            "5052-32000"
+          ]
+        }
+      },
+      "unreserved_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "attributes": {
+        "label": "public"
+      },
+      "active": true,
+      "version": "1.0.3",
+      "reserved_resources_full": {
+        "slave_public": [
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 1,
+                  "end": 21
+                },
+                {
+                  "begin": 23,
+                  "end": 5050
+                },
+                {
+                  "begin": 5052,
+                  "end": 32000
+                }
+              ]
+            },
+            "role": "slave_public"
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 36208
+            },
+            "role": "slave_public"
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 4
+            },
+            "role": "slave_public"
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 6799
+            },
+            "role": "slave_public"
+          }
+        ]
+      },
+      "used_resources_full": [
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 2
+          },
+          "role": "slave_public"
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 1024
+          },
+          "role": "slave_public"
+        },
+        {
+          "name": "ports",
+          "type": "RANGES",
+          "ranges": {
+            "range": [
+              {
+                "begin": 80,
+                "end": 80
+              },
+              {
+                "begin": 443,
+                "end": 443
+              },
+              {
+                "begin": 9090,
+                "end": 9091
+              },
+              {
+                "begin": 10000,
+                "end": 10100
+              }
+            ]
+          },
+          "role": "slave_public"
+        }
+      ],
+      "offered_resources_full": []
+    },
+    {
+      "id": "80f0fb53-95a0-409b-a78d-ca0e002cc289-S7",
+      "pid": "slave(1)@10.200.0.61:5051",
+      "hostname": "10.200.0.61",
+      "registered_time": 1.5008992E9,
+      "reregistered_time": 1.5008992E9,
+      "resources": {
+        "disk": 30247,
+        "mem": 30989,
+        "gpus": 0,
+        "cpus": 8,
+        "ports": [
+          "1025-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-32000"
+        ]
+      },
+      "used_resources": {
+        "disk": 256,
+        "mem": 5632,
+        "gpus": 0,
+        "cpus": 4.1
+      },
+      "offered_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "reserved_resources": {
+        "elasticsearchstratio-1-role": {
+          "disk": 2000,
+          "mem": 2048,
+          "gpus": 0,
+          "cpus": 1,
+          "ports": [
+            "9300-9300",
+            "31500-31500"
+          ]
+        },
+        "elasticsearchstratio-3-role": {
+          "disk": 1100,
+          "mem": 6144,
+          "gpus": 0,
+          "cpus": 1,
+          "ports": [
+            "1026-1026",
+            "31504-31504",
+            "31508-31508"
+          ]
+        },
+        "zookeeperstable": {
+          "disk": 0,
+          "mem": 3072,
+          "gpus": 0,
+          "cpus": 0
+        },
+        "zookeeperqa": {
+          "disk": 256,
+          "mem": 9216,
+          "gpus": 0,
+          "cpus": 1
+        }
+      },
+      "unreserved_resources": {
+        "disk": 26891,
+        "mem": 10509,
+        "gpus": 0,
+        "cpus": 5,
+        "ports": [
+          "1025-1025",
+          "1027-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-9299",
+          "9301-31499",
+          "31501-31503",
+          "31505-31507",
+          "31509-32000"
+        ]
+      },
+      "attributes": {
+        "label": "all"
+      },
+      "active": true,
+      "version": "1.0.3",
+      "reserved_resources_full": {
+        "elasticsearchstratio-1-role": [
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 2000
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "6c8dd0f7-cde4-4ef4-9a04-6d63a4a1426f"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "5615ee02-e2a2-430a-93dd-d4c0a3851cfc",
+                "principal": "elasticsearchstratio-1-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 9300,
+                  "end": 9300
+                },
+                {
+                  "begin": 31500,
+                  "end": 31500
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "2519b5c2-779c-4592-ab4b-a2c3177a1676"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "be820867-dc34-42a1-9589-db9e1a5ffcb4"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 2048
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "27fba7ac-9768-4c38-95e9-b5bc0a62057c"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "elasticsearchstratio-3-role": [
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 31508,
+                  "end": 31508
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "a200bbfe-e242-4927-8fa5-acff9e7f3145"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 2048
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "3b895f8c-69e8-4431-8bf0-0bc1eba9ea00"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "b4b23e17-466f-4874-bfcc-f6b2ef176ca5"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 100
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "06b5c515-67cf-4373-ad02-4297c25d9089"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "c127a98a-74c7-4f13-9a83-7890b9186dcd",
+                "principal": "elasticsearchstratio-3-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "7b335011-faa3-4b61-8fd2-31deefa96831"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 4096
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "8f720e0d-1cd5-46bd-a735-5d4624acaf93"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 1026,
+                  "end": 1026
+                },
+                {
+                  "begin": 31504,
+                  "end": 31504
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "720e1ade-c7a3-4406-a79c-1b0b6946ffa0"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1000
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "1432a686-7108-4ec9-98bf-c0b8c9b6a897"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "f1b0287f-1409-49ea-99d2-0f69ca14e4b4",
+                "principal": "elasticsearchstratio-3-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          }
+        ],
+        "zookeeperstable": [
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 3072
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            }
+          }
+        ],
+        "zookeeperqa": [
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 9216
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            },
+            "disk": {
+              "persistence": {
+                "id": "15cb320b-d13c-4c5a-a94d-0639f5b8fc33",
+                "principal": "zookeeperqa"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          }
+        ]
+      },
+      "used_resources_full": [
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 1
+          },
+          "role": "zookeeperqa",
+          "reservation": {
+            "principal": "zookeeperqa"
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 3072
+          },
+          "role": "zookeeperqa",
+          "reservation": {
+            "principal": "zookeeperqa"
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "zookeeperqa",
+          "reservation": {
+            "principal": "zookeeperqa"
+          },
+          "disk": {
+            "persistence": {
+              "id": "15cb320b-d13c-4c5a-a94d-0639f5b8fc33",
+              "principal": "zookeeperqa"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "data"
+            }
+          }
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 3.1
+          },
+          "role": "*"
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 2560
+          },
+          "role": "*"
+        }
+      ],
+      "offered_resources_full": []
+    },
+    {
+      "id": "80f0fb53-95a0-409b-a78d-ca0e002cc289-S1",
+      "pid": "slave(1)@10.200.0.62:5051",
+      "hostname": "10.200.0.62",
+      "registered_time": 1.5008992E9,
+      "reregistered_time": 1.5008992E9,
+      "resources": {
+        "disk": 29747,
+        "mem": 6799,
+        "gpus": 0,
+        "cpus": 4,
+        "ports": [
+          "1-21",
+          "23-5050",
+          "5052-32000"
+        ]
+      },
+      "used_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "offered_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "reserved_resources": {
+        "slave_public": {
+          "disk": 29747,
+          "mem": 6799,
+          "gpus": 0,
+          "cpus": 4,
+          "ports": [
+            "1-21",
+            "23-5050",
+            "5052-32000"
+          ]
+        }
+      },
+      "unreserved_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "attributes": {
+        "label": "public"
+      },
+      "active": true,
+      "version": "1.0.3",
+      "reserved_resources_full": {
+        "slave_public": [
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 1,
+                  "end": 21
+                },
+                {
+                  "begin": 23,
+                  "end": 5050
+                },
+                {
+                  "begin": 5052,
+                  "end": 32000
+                }
+              ]
+            },
+            "role": "slave_public"
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 29747
+            },
+            "role": "slave_public"
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 4
+            },
+            "role": "slave_public"
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 6799
+            },
+            "role": "slave_public"
+          }
+        ]
+      },
+      "used_resources_full": [],
+      "offered_resources_full": []
+    },
+    {
+      "id": "80f0fb53-95a0-409b-a78d-ca0e002cc289-S4",
+      "pid": "slave(1)@10.200.0.56:5051",
+      "hostname": "10.200.0.56",
+      "registered_time": 1.5008992E9,
+      "reregistered_time": 1.5008992E9,
+      "resources": {
+        "disk": 29492,
+        "mem": 30989,
+        "gpus": 0,
+        "cpus": 8,
+        "ports": [
+          "1025-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-32000"
+        ]
+      },
+      "used_resources": {
+        "disk": 2280,
+        "mem": 14592,
+        "gpus": 0,
+        "cpus": 5.5,
+        "ports": [
+          "9300-9300",
+          "10651-10651",
+          "16242-16242",
+          "31500-31500"
+        ]
+      },
+      "offered_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "reserved_resources": {
+        "elasticsearchstratio-4-role": {
+          "disk": 1000,
+          "mem": 4096,
+          "gpus": 0,
+          "cpus": 0.5,
+          "ports": [
+            "9300-9300",
+            "31500-31500"
+          ]
+        },
+        "zookeeperqa": {
+          "disk": 0,
+          "mem": 3072,
+          "gpus": 0,
+          "cpus": 0
+        },
+        "elasticsearchstratio-role": {
+          "disk": 100,
+          "mem": 2048,
+          "gpus": 0,
+          "cpus": 0.5,
+          "ports": [
+            "31508-31508"
+          ]
+        },
+        "postgres": {
+          "disk": 5376,
+          "mem": 2816,
+          "gpus": 0,
+          "cpus": 1.5
+        },
+        "zookeeperstable": {
+          "disk": 1536,
+          "mem": 7168,
+          "gpus": 0,
+          "cpus": 2
+        },
+        "elasticsearchstratio-2-role": {
+          "disk": 1000,
+          "mem": 4096,
+          "gpus": 0,
+          "cpus": 0.5,
+          "ports": [
+            "1026-1026",
+            "31502-31502"
+          ]
+        }
+      },
+      "unreserved_resources": {
+        "disk": 20480,
+        "mem": 7693,
+        "gpus": 0,
+        "cpus": 3,
+        "ports": [
+          "1025-1025",
+          "1027-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-9299",
+          "9301-31499",
+          "31501-31501",
+          "31503-31507",
+          "31509-32000"
+        ]
+      },
+      "attributes": {
+        "label": "all"
+      },
+      "active": true,
+      "version": "1.0.3",
+      "reserved_resources_full": {
+        "elasticsearchstratio-4-role": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "dfc94823-cedb-43f1-a377-a8b196cf1ff8"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 4096
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "1612066f-2ac6-4936-9401-b4c66ae5be69"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 9300,
+                  "end": 9300
+                },
+                {
+                  "begin": 31500,
+                  "end": 31500
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "017014ef-36eb-4ae7-9743-f1a0c5c32f5d"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1000
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "a6d08de2-c68a-4293-9e2a-3ae920e06481"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "8f7e5b1d-3b1c-4747-b58c-ae53af8d22d7",
+                "principal": "elasticsearchstratio-4-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          }
+        ],
+        "zookeeperqa": [
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 3072
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            }
+          }
+        ],
+        "elasticsearchstratio-role": [
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 100
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "af2b5dd6-ab5a-46f2-b437-f528f57376f0"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "4d9b5c15-084b-495b-a0d6-f8f7dc3bb975",
+                "principal": "elasticsearchstratio-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "5b62ff74-d575-4e37-873f-70e755fac352"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 31508,
+                  "end": 31508
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "8f97139b-8cf5-4be2-be4b-ee594d5e8f10"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 2048
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "b5e82115-b9e8-4a49-9ebc-e0123aca2d42"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "postgres": [
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 2816
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "2757f793-a0dc-48e8-89e6-345c6ea3a99d",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1.5
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "c0e699fe-2da5-460c-98df-d82c1e840291",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "1a892acb-5813-48a0-aed7-ad5bf421267a",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "ccc4c0a5-d7b9-441d-b78f-b9361f523d02",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "eb20b905-9637-44dd-8ad2-180926747ff3",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "ad955e8e-0b78-465d-9e73-1d7f95ec8c12",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "06430c6d-8b0d-4265-91ea-97220bc82b7e",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "294894ea-f773-470a-ac25-917215c2884c",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "8afe77ec-63e5-4757-85ac-c5e1e8a1eacc",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "b543f066-bc1f-4c8c-a4cf-2f0404cead26",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "5b2120d9-bc49-4de9-848f-19021e68d595",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "5756b5fc-a6b9-47fc-8e06-a337b770eee5",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "14013832-d1d8-4e3b-b5dc-77969a9a9949",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "48b36b70-2871-42ab-8cf2-ee30fb405348",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "fae4d050-6b31-41ed-90ab-6cc6d1d801ae",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "b49424a3-dad4-4088-ad9b-42b2135d8453",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "64724d75-1e94-46db-9bbf-0bacf52f7a83",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "c008d9b2-ac5f-4237-8d48-8fd2dc707cc0",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "1b17727f-b480-48bc-9847-c13d5fb39f99",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "5c995bff-80ff-40b2-904d-0b9fd97a6b73",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "d1bab34a-d445-4cf4-80e2-aedd257c99f0",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          }
+        ],
+        "zookeeperstable": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 2
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 7168
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "9fe33e8b-3848-4926-841e-c706fb5d32f9",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "bef810ce-7b48-4b6a-a941-a83260ffbaed",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "d85fbb4a-9ae7-48f9-9cf5-49900a8492a7",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "fbdc2458-6d7c-4d59-9fd3-82fc79e0adab",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "86f479ab-1bdf-4367-8cb5-78fd46573d46",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "c75f2a39-08db-4aec-a31b-7b0dcdb218d7",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          }
+        ],
+        "elasticsearchstratio-2-role": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "f7c40641-cf31-4ff8-bcf0-3b7471353ad6"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 1026,
+                  "end": 1026
+                },
+                {
+                  "begin": 31502,
+                  "end": 31502
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "a760f9fe-fba5-447a-ae10-9dbf6fccb0fe"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 4096
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "40477958-6436-44df-82c5-217f74f7df23"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1000
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "1d4a396b-290f-48cd-9244-3f70579b8228"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "79cbc135-57a2-4657-ae4d-6d8506f9fbeb",
+                "principal": "elasticsearchstratio-2-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "container-path"
+              }
+            }
+          }
+        ]
+      },
+      "used_resources_full": [
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 2
+          },
+          "role": "zookeeperstable",
+          "reservation": {
+            "principal": "zookeeperstable"
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 6144
+          },
+          "role": "zookeeperstable",
+          "reservation": {
+            "principal": "zookeeperstable"
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "zookeeperstable",
+          "reservation": {
+            "principal": "zookeeperstable"
+          },
+          "disk": {
+            "persistence": {
+              "id": "c75f2a39-08db-4aec-a31b-7b0dcdb218d7",
+              "principal": "zookeeperstable"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "data"
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "zookeeperstable",
+          "reservation": {
+            "principal": "zookeeperstable"
+          },
+          "disk": {
+            "persistence": {
+              "id": "86f479ab-1bdf-4367-8cb5-78fd46573d46",
+              "principal": "zookeeperstable"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "data"
+            }
+          }
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 0.5
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          },
+          "disk": {
+            "persistence": {
+              "id": "06430c6d-8b0d-4265-91ea-97220bc82b7e",
+              "principal": "postgres"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "index"
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          },
+          "disk": {
+            "persistence": {
+              "id": "294894ea-f773-470a-ac25-917215c2884c",
+              "principal": "postgres"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "wal"
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          },
+          "disk": {
+            "persistence": {
+              "id": "8afe77ec-63e5-4757-85ac-c5e1e8a1eacc",
+              "principal": "postgres"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "data"
+            }
+          }
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 2.5
+          },
+          "role": "*"
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 4096
+          },
+          "role": "*"
+        },
+        {
+          "name": "ports",
+          "type": "RANGES",
+          "ranges": {
+            "range": [
+              {
+                "begin": 10651,
+                "end": 10651
+              },
+              {
+                "begin": 16242,
+                "end": 16242
+              }
+            ]
+          },
+          "role": "*"
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 0.5
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "dfc94823-cedb-43f1-a377-a8b196cf1ff8"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 4096
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "1612066f-2ac6-4936-9401-b4c66ae5be69"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "ports",
+          "type": "RANGES",
+          "ranges": {
+            "range": [
+              {
+                "begin": 9300,
+                "end": 9300
+              },
+              {
+                "begin": 31500,
+                "end": 31500
+              }
+            ]
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "017014ef-36eb-4ae7-9743-f1a0c5c32f5d"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 1000
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "a6d08de2-c68a-4293-9e2a-3ae920e06481"
+                }
+              ]
+            }
+          },
+          "disk": {
+            "persistence": {
+              "id": "8f7e5b1d-3b1c-4747-b58c-ae53af8d22d7",
+              "principal": "elasticsearchstratio-4-principal"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "elastic-volume"
+            }
+          }
+        }
+      ],
+      "offered_resources_full": []
+    },
+    {
+      "id": "80f0fb53-95a0-409b-a78d-ca0e002cc289-S3",
+      "pid": "slave(1)@10.200.0.58:5051",
+      "hostname": "10.200.0.58",
+      "registered_time": 1.5008992E9,
+      "reregistered_time": 1.5008992E9,
+      "resources": {
+        "disk": 24070,
+        "mem": 30989,
+        "gpus": 0,
+        "cpus": 8,
+        "ports": [
+          "1025-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-32000"
+        ]
+      },
+      "used_resources": {
+        "disk": 1100,
+        "mem": 11648,
+        "gpus": 0,
+        "cpus": 5,
+        "ports": [
+          "1025-1025",
+          "31504-31504",
+          "31508-31508"
+        ]
+      },
+      "offered_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "reserved_resources": {
+        "zookeeperstable": {
+          "disk": 0,
+          "mem": 0,
+          "gpus": 0,
+          "cpus": 1
+        },
+        "postgres": {
+          "disk": 768,
+          "mem": 256,
+          "gpus": 0,
+          "cpus": 0.5
+        },
+        "elasticsearchstratio-4-role": {
+          "disk": 1100,
+          "mem": 6144,
+          "gpus": 0,
+          "cpus": 1,
+          "ports": [
+            "1025-1025",
+            "31504-31504",
+            "31508-31508"
+          ]
+        },
+        "zookeeperqa": {
+          "disk": 256,
+          "mem": 12288,
+          "gpus": 0,
+          "cpus": 0
+        },
+        "elasticsearchstratio-2-role": {
+          "disk": 1000,
+          "mem": 4096,
+          "gpus": 0,
+          "cpus": 0.5,
+          "ports": [
+            "9300-9300",
+            "31500-31500"
+          ]
+        }
+      },
+      "unreserved_resources": {
+        "disk": 20946,
+        "mem": 8205,
+        "gpus": 0,
+        "cpus": 5,
+        "ports": [
+          "1026-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-9299",
+          "9301-31499",
+          "31501-31503",
+          "31505-31507",
+          "31509-32000"
+        ]
+      },
+      "attributes": {
+        "label": "all"
+      },
+      "active": true,
+      "version": "1.0.3",
+      "reserved_resources_full": {
+        "zookeeperstable": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            }
+          }
+        ],
+        "postgres": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "afa4c5e8-930a-49d0-81bf-980070027efe",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "8a3b725e-a942-4377-84cc-8327cad67c65",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "3fba1a3e-6ee5-42e5-9d90-fc38885c368d",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          }
+        ],
+        "elasticsearchstratio-4-role": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "bd225cfe-cd46-4e4b-bd6d-a95e0a964357"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 4096
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "dce4d1c8-9a53-4447-94f6-6275af0c8389"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 1025,
+                  "end": 1025
+                },
+                {
+                  "begin": 31504,
+                  "end": 31504
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "dbed9a2d-9351-4683-af5f-232433c6ec8e"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1000
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "68cf3cc2-2e4b-489d-b476-f8b9abdfb086"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "9344aca5-ed42-432b-a9aa-93fd287a5848",
+                "principal": "elasticsearchstratio-4-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "9e0439b0-7a59-4a79-a679-5483b12b1407"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 2048
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "c76f47d5-dbc8-4a0c-9a37-7039dfda20d4"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 31508,
+                  "end": 31508
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "d77a6b4a-9916-4039-94ce-7f66cd7c5fa3"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 100
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "4db71961-79c6-4123-bcb2-5daece96ba93"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "aa0c06e3-16cd-4ba3-b672-be84decd7c40",
+                "principal": "elasticsearchstratio-4-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          }
+        ],
+        "zookeeperqa": [
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 12288
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            },
+            "disk": {
+              "persistence": {
+                "id": "d49bd0c9-76ac-4d76-8cce-de2f9d4e9f68",
+                "principal": "zookeeperqa"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          }
+        ],
+        "elasticsearchstratio-2-role": [
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 9300,
+                  "end": 9300
+                },
+                {
+                  "begin": 31500,
+                  "end": 31500
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "c93feee0-5e1f-49f1-be4e-a6152adafd2a"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1000
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "d357cd97-f535-4af1-8ae4-eceb32d043b0"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "78ad7280-fbea-4ce9-9a78-d50a0440fc25",
+                "principal": "elasticsearchstratio-2-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elasticsandbox"
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "b3aad2ce-9151-4729-811a-5b033c0191e3"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 4096
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "d2c4d8eb-e2bc-459d-9cea-17ea64db12f0"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "used_resources_full": [
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 4
+          },
+          "role": "*"
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 5504
+          },
+          "role": "*"
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 0.5
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "bd225cfe-cd46-4e4b-bd6d-a95e0a964357"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 4096
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "dce4d1c8-9a53-4447-94f6-6275af0c8389"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "ports",
+          "type": "RANGES",
+          "ranges": {
+            "range": [
+              {
+                "begin": 1025,
+                "end": 1025
+              },
+              {
+                "begin": 31504,
+                "end": 31504
+              }
+            ]
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "dbed9a2d-9351-4683-af5f-232433c6ec8e"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 1000
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "68cf3cc2-2e4b-489d-b476-f8b9abdfb086"
+                }
+              ]
+            }
+          },
+          "disk": {
+            "persistence": {
+              "id": "9344aca5-ed42-432b-a9aa-93fd287a5848",
+              "principal": "elasticsearchstratio-4-principal"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "elastic-volume"
+            }
+          }
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 0.5
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "9e0439b0-7a59-4a79-a679-5483b12b1407"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 2048
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "c76f47d5-dbc8-4a0c-9a37-7039dfda20d4"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "ports",
+          "type": "RANGES",
+          "ranges": {
+            "range": [
+              {
+                "begin": 31508,
+                "end": 31508
+              }
+            ]
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "d77a6b4a-9916-4039-94ce-7f66cd7c5fa3"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 100
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "4db71961-79c6-4123-bcb2-5daece96ba93"
+                }
+              ]
+            }
+          },
+          "disk": {
+            "persistence": {
+              "id": "aa0c06e3-16cd-4ba3-b672-be84decd7c40",
+              "principal": "elasticsearchstratio-4-principal"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "elastic-volume"
+            }
+          }
+        }
+      ],
+      "offered_resources_full": []
+    },
+    {
+      "id": "80f0fb53-95a0-409b-a78d-ca0e002cc289-S5",
+      "pid": "slave(1)@10.200.0.55:5051",
+      "hostname": "10.200.0.55",
+      "registered_time": 1.5008992E9,
+      "reregistered_time": 1.5008992E9,
+      "resources": {
+        "disk": 26937,
+        "mem": 30989,
+        "gpus": 0,
+        "cpus": 8,
+        "ports": [
+          "1025-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-32000"
+        ]
+      },
+      "used_resources": {
+        "disk": 1024,
+        "mem": 7808,
+        "gpus": 0,
+        "cpus": 4.5
+      },
+      "offered_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "reserved_resources": {
+        "elasticsearchstratio-1-role": {
+          "disk": 1000,
+          "mem": 2048,
+          "gpus": 0,
+          "cpus": 1,
+          "ports": [
+            "1025-1025",
+            "31504-31504"
+          ]
+        },
+        "postgres": {
+          "disk": 768,
+          "mem": 256,
+          "gpus": 0,
+          "cpus": 0.5
+        },
+        "zookeeperstable": {
+          "disk": 1024,
+          "mem": 7168,
+          "gpus": 0,
+          "cpus": 1
+        }
+      },
+      "unreserved_resources": {
+        "disk": 24145,
+        "mem": 21517,
+        "gpus": 0,
+        "cpus": 5.5,
+        "ports": [
+          "1026-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-31503",
+          "31505-32000"
+        ]
+      },
+      "attributes": {
+        "label": "all"
+      },
+      "active": true,
+      "version": "1.0.3",
+      "reserved_resources_full": {
+        "elasticsearchstratio-1-role": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "6045e80a-a2fa-44bb-9170-3b7e9cebce71"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 2048
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "3abb3c5d-41a9-4bbd-9559-308579c4ad84"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 1025,
+                  "end": 1025
+                },
+                {
+                  "begin": 31504,
+                  "end": 31504
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "b513a36d-7ff4-4b25-8242-7cabe2541c9c"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1000
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "bd51c489-f867-483f-b1a0-3a7dda56561f"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "5ecf7081-1aef-4fe7-9204-bd94779e141e",
+                "principal": "elasticsearchstratio-1-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          }
+        ],
+        "postgres": [
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "902d9d9f-6a1f-48d3-9f42-a5d7dec49f26",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "index"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "182a49e5-3243-4f52-891b-627951b06bbe",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            },
+            "disk": {
+              "persistence": {
+                "id": "5b686db8-7761-4e8e-b2f8-0ba299c1b69b",
+                "principal": "postgres"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "wal"
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "postgres",
+            "reservation": {
+              "principal": "postgres"
+            }
+          }
+        ],
+        "zookeeperstable": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 7168
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "cfa93098-7440-427f-97b2-1dacb210dd18",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "d91ac3b5-96cf-4f87-bf69-fc535cf6294a",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "297fedb6-b816-44b1-9598-1fedc747b483",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "d8f711d7-8f41-4db1-b341-b10ac2346e6c",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          }
+        ]
+      },
+      "used_resources_full": [
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 3
+          },
+          "role": "*"
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 4480
+          },
+          "role": "*"
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 1
+          },
+          "role": "zookeeperstable",
+          "reservation": {
+            "principal": "zookeeperstable"
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 3072
+          },
+          "role": "zookeeperstable",
+          "reservation": {
+            "principal": "zookeeperstable"
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "zookeeperstable",
+          "reservation": {
+            "principal": "zookeeperstable"
+          },
+          "disk": {
+            "persistence": {
+              "id": "d8f711d7-8f41-4db1-b341-b10ac2346e6c",
+              "principal": "zookeeperstable"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "data"
+            }
+          }
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 0.5
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          },
+          "disk": {
+            "persistence": {
+              "id": "902d9d9f-6a1f-48d3-9f42-a5d7dec49f26",
+              "principal": "postgres"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "index"
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          },
+          "disk": {
+            "persistence": {
+              "id": "5b686db8-7761-4e8e-b2f8-0ba299c1b69b",
+              "principal": "postgres"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "wal"
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "postgres",
+          "reservation": {
+            "principal": "postgres"
+          },
+          "disk": {
+            "persistence": {
+              "id": "182a49e5-3243-4f52-891b-627951b06bbe",
+              "principal": "postgres"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "data"
+            }
+          }
+        }
+      ],
+      "offered_resources_full": []
+    },
+    {
+      "id": "80f0fb53-95a0-409b-a78d-ca0e002cc289-S9",
+      "pid": "slave(1)@10.200.0.59:5051",
+      "hostname": "10.200.0.59",
+      "registered_time": 1.5008992E9,
+      "reregistered_time": 1.5008992E9,
+      "resources": {
+        "disk": 18160,
+        "mem": 30989,
+        "gpus": 0,
+        "cpus": 8,
+        "ports": [
+          "1025-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-32000"
+        ]
+      },
+      "used_resources": {
+        "disk": 5256,
+        "mem": 11972,
+        "gpus": 0,
+        "cpus": 7,
+        "ports": [
+          "1025-1025",
+          "2551-2551",
+          "9092-9092"
+        ]
+      },
+      "offered_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "reserved_resources": {
+        "kafka-sec": {
+          "disk": 5000,
+          "mem": 1280,
+          "gpus": 0,
+          "cpus": 1.5,
+          "ports": [
+            "1025-1025",
+            "9092-9092"
+          ]
+        },
+        "zookeeperqa": {
+          "disk": 512,
+          "mem": 12288,
+          "gpus": 0,
+          "cpus": 1
+        },
+        "elasticsearchstratio-3-role": {
+          "disk": 1000,
+          "mem": 4096,
+          "gpus": 0,
+          "cpus": 0.5,
+          "ports": [
+            "1026-1026",
+            "31502-31502"
+          ]
+        },
+        "zookeeperstable": {
+          "disk": 256,
+          "mem": 1024,
+          "gpus": 0,
+          "cpus": 0
+        },
+        "elasticsearchstratio-role": {
+          "disk": 1000,
+          "mem": 4096,
+          "gpus": 0,
+          "cpus": 0.5,
+          "ports": [
+            "9300-9300",
+            "31500-31500"
+          ]
+        }
+      },
+      "unreserved_resources": {
+        "disk": 10392,
+        "mem": 8205,
+        "gpus": 0,
+        "cpus": 4.5,
+        "ports": [
+          "1027-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-9091",
+          "9093-9299",
+          "9301-31499",
+          "31501-31501",
+          "31503-32000"
+        ]
+      },
+      "attributes": {
+        "label": "all"
+      },
+      "active": true,
+      "version": "1.0.3",
+      "reserved_resources_full": {
+        "kafka-sec": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1
+            },
+            "role": "kafka-sec",
+            "reservation": {
+              "principal": "kafka-sec",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "e19f705d-e55b-483d-87e6-872667948360"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1024
+            },
+            "role": "kafka-sec",
+            "reservation": {
+              "principal": "kafka-sec",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "506f6ff8-cd34-4dc8-8dd5-030b07281498"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 5000
+            },
+            "role": "kafka-sec",
+            "reservation": {
+              "principal": "kafka-sec",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "beb2c07f-b4fb-4723-a840-b01d468dee47"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "ae7c5531-1971-4726-aa35-c57de79f084e",
+                "principal": "kafka-sec"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "kafka-volume-a5b5cfc8-4b61-4371-8841-756fefc48ef8"
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 9092,
+                  "end": 9092
+                }
+              ]
+            },
+            "role": "kafka-sec",
+            "reservation": {
+              "principal": "kafka-sec",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "3665f673-2973-4de3-9b4d-cc9d11c0d0ba"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "kafka-sec",
+            "reservation": {
+              "principal": "kafka-sec",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "f3adefa9-92a8-4d20-9cdf-be6d53a54a86"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "kafka-sec",
+            "reservation": {
+              "principal": "kafka-sec",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "54533b65-7fc1-4b88-b796-43b8f555c6bd"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 1025,
+                  "end": 1025
+                }
+              ]
+            },
+            "role": "kafka-sec",
+            "reservation": {
+              "principal": "kafka-sec",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "dynamic_port",
+                    "value": "API_PORT"
+                  },
+                  {
+                    "key": "resource_id",
+                    "value": "f202ca5f-2e41-46a8-b0b1-342ce0fb504a"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "zookeeperqa": [
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 12288
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            },
+            "disk": {
+              "persistence": {
+                "id": "e0b95946-b259-4226-a027-780bfa153aa3",
+                "principal": "zookeeperqa"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            },
+            "disk": {
+              "persistence": {
+                "id": "7b906d4d-589c-4853-9c2c-c3be6817bbde",
+                "principal": "zookeeperqa"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          }
+        ],
+        "elasticsearchstratio-3-role": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "8b0e4e71-dfe8-44fb-a1eb-224f1d22ed75"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 4096
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "f4343aca-bac0-4f5a-8c49-9683802ab5a6"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 1026,
+                  "end": 1026
+                },
+                {
+                  "begin": 31502,
+                  "end": 31502
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "1438da0d-2ecd-4af0-8899-072de937551b"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1000
+            },
+            "role": "elasticsearchstratio-3-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-3-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "8c02b3a9-457c-4373-ac60-d143937d341a"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "de1600f2-fdd3-401e-b9f1-d66ac7f53c4e",
+                "principal": "elasticsearchstratio-3-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          }
+        ],
+        "zookeeperstable": [
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1024
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 256
+            },
+            "role": "zookeeperstable",
+            "reservation": {
+              "principal": "zookeeperstable"
+            },
+            "disk": {
+              "persistence": {
+                "id": "a09a96e1-277f-49d5-8011-1f633b6047f9",
+                "principal": "zookeeperstable"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "data"
+              }
+            }
+          }
+        ],
+        "elasticsearchstratio-role": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "9fa73bee-1796-451c-b940-2ab7963147db"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1000
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "8d71f158-542a-48de-9801-1b92442ea141"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "b7b7da50-3aec-4b9e-8e34-b90bebbdb4f2",
+                "principal": "elasticsearchstratio-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 4096
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "7fa0a2e8-6bb1-4ca1-933c-b345ba34c4b4"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 9300,
+                  "end": 9300
+                },
+                {
+                  "begin": 31500,
+                  "end": 31500
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "f8881575-b6a9-43fd-967b-8b5892523a44"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "used_resources_full": [
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 4.5
+          },
+          "role": "*"
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 7620
+          },
+          "role": "*"
+        },
+        {
+          "name": "ports",
+          "type": "RANGES",
+          "ranges": {
+            "range": [
+              {
+                "begin": 2551,
+                "end": 2551
+              }
+            ]
+          },
+          "role": "*"
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 1
+          },
+          "role": "zookeeperqa",
+          "reservation": {
+            "principal": "zookeeperqa"
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 3072
+          },
+          "role": "zookeeperqa",
+          "reservation": {
+            "principal": "zookeeperqa"
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "zookeeperqa",
+          "reservation": {
+            "principal": "zookeeperqa"
+          },
+          "disk": {
+            "persistence": {
+              "id": "7b906d4d-589c-4853-9c2c-c3be6817bbde",
+              "principal": "zookeeperqa"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "data"
+            }
+          }
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 0.5
+          },
+          "role": "kafka-sec",
+          "reservation": {
+            "principal": "kafka-sec",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "f3adefa9-92a8-4d20-9cdf-be6d53a54a86"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 256
+          },
+          "role": "kafka-sec",
+          "reservation": {
+            "principal": "kafka-sec",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "54533b65-7fc1-4b88-b796-43b8f555c6bd"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "ports",
+          "type": "RANGES",
+          "ranges": {
+            "range": [
+              {
+                "begin": 1025,
+                "end": 1025
+              }
+            ]
+          },
+          "role": "kafka-sec",
+          "reservation": {
+            "principal": "kafka-sec",
+            "labels": {
+              "labels": [
+                {
+                  "key": "dynamic_port",
+                  "value": "API_PORT"
+                },
+                {
+                  "key": "resource_id",
+                  "value": "f202ca5f-2e41-46a8-b0b1-342ce0fb504a"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 1
+          },
+          "role": "kafka-sec",
+          "reservation": {
+            "principal": "kafka-sec",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "e19f705d-e55b-483d-87e6-872667948360"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 1024
+          },
+          "role": "kafka-sec",
+          "reservation": {
+            "principal": "kafka-sec",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "506f6ff8-cd34-4dc8-8dd5-030b07281498"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "ports",
+          "type": "RANGES",
+          "ranges": {
+            "range": [
+              {
+                "begin": 9092,
+                "end": 9092
+              }
+            ]
+          },
+          "role": "kafka-sec",
+          "reservation": {
+            "principal": "kafka-sec",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "3665f673-2973-4de3-9b4d-cc9d11c0d0ba"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 5000
+          },
+          "role": "kafka-sec",
+          "reservation": {
+            "principal": "kafka-sec",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "beb2c07f-b4fb-4723-a840-b01d468dee47"
+                }
+              ]
+            }
+          },
+          "disk": {
+            "persistence": {
+              "id": "ae7c5531-1971-4726-aa35-c57de79f084e",
+              "principal": "kafka-sec"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "kafka-volume-a5b5cfc8-4b61-4371-8841-756fefc48ef8"
+            }
+          }
+        }
+      ],
+      "offered_resources_full": []
+    },
+    {
+      "id": "80f0fb53-95a0-409b-a78d-ca0e002cc289-S8",
+      "pid": "slave(1)@10.200.0.60:5051",
+      "hostname": "10.200.0.60",
+      "registered_time": 1.5008992E9,
+      "reregistered_time": 1.5008992E9,
+      "resources": {
+        "disk": 24196,
+        "mem": 30989,
+        "gpus": 0,
+        "cpus": 8,
+        "ports": [
+          "1025-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-32000"
+        ]
+      },
+      "used_resources": {
+        "disk": 1000,
+        "mem": 11854,
+        "gpus": 0,
+        "cpus": 5.5,
+        "ports": [
+          "1026-1026",
+          "4040-4040",
+          "11052-11053",
+          "31502-31502"
+        ]
+      },
+      "offered_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "reserved_resources": {
+        "elasticsearchstratio-1-role": {
+          "disk": 2000,
+          "mem": 2048,
+          "gpus": 0,
+          "cpus": 1,
+          "ports": [
+            "9300-9300",
+            "31500-31500"
+          ]
+        },
+        "elasticsearchstratio-4-role": {
+          "disk": 1000,
+          "mem": 4096,
+          "gpus": 0,
+          "cpus": 0.5,
+          "ports": [
+            "1026-1026",
+            "31502-31502"
+          ]
+        },
+        "zookeeperqa": {
+          "disk": 0,
+          "mem": 9216,
+          "gpus": 0,
+          "cpus": 0
+        },
+        "elasticsearchstratio-role": {
+          "disk": 1000,
+          "mem": 4096,
+          "gpus": 0,
+          "cpus": 0.5,
+          "ports": [
+            "1025-1025",
+            "31504-31504"
+          ]
+        },
+        "elasticsearchstratio-2-role": {
+          "disk": 100,
+          "mem": 2048,
+          "gpus": 0,
+          "cpus": 0.5,
+          "ports": [
+            "31508-31508"
+          ]
+        }
+      },
+      "unreserved_resources": {
+        "disk": 20096,
+        "mem": 9485,
+        "gpus": 0,
+        "cpus": 5.5,
+        "ports": [
+          "1027-2180",
+          "2182-3887",
+          "3889-5049",
+          "5052-8079",
+          "8082-8180",
+          "8182-9299",
+          "9301-31499",
+          "31501-31501",
+          "31503-31503",
+          "31505-31507",
+          "31509-32000"
+        ]
+      },
+      "attributes": {
+        "label": "all"
+      },
+      "active": true,
+      "version": "1.0.3",
+      "reserved_resources_full": {
+        "elasticsearchstratio-1-role": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "eaafde84-227b-4cb3-ac06-c59973816ba8"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 2048
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "262abb32-91ca-4122-920e-c584d5395b8b"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 9300,
+                  "end": 9300
+                },
+                {
+                  "begin": 31500,
+                  "end": 31500
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "2939ffeb-e149-4c25-ba45-33707f36b3be"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 2000
+            },
+            "role": "elasticsearchstratio-1-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-1-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "5e90617b-7add-4255-af49-4ae60d226023"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "43acb78d-593c-4172-98a1-624add8bd133",
+                "principal": "elasticsearchstratio-1-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          }
+        ],
+        "elasticsearchstratio-4-role": [
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "565e3682-f9d9-41ae-8b47-5164c9a0a573"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 4096
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "861f4f97-4583-4838-bcfd-1cbb8b3ec676"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 1026,
+                  "end": 1026
+                },
+                {
+                  "begin": 31502,
+                  "end": 31502
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "95cbfcb3-13f9-4d65-bea8-dd569032906e"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1000
+            },
+            "role": "elasticsearchstratio-4-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-4-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "cddfeb9c-0e45-4ba7-8c11-59cde3329925"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "3df1b653-d62c-44a9-837a-8efe99b4898a",
+                "principal": "elasticsearchstratio-4-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          }
+        ],
+        "zookeeperqa": [
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 9216
+            },
+            "role": "zookeeperqa",
+            "reservation": {
+              "principal": "zookeeperqa"
+            }
+          }
+        ],
+        "elasticsearchstratio-role": [
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 1025,
+                  "end": 1025
+                },
+                {
+                  "begin": 31504,
+                  "end": 31504
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "65b7c9a0-af57-4eb7-baff-c8845d2f672b"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 1000
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "ef368fe1-6090-476c-a194-99da8486563c"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "36c3ddf4-7582-4950-84a9-0dc3629c0163",
+                "principal": "elasticsearchstratio-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "elastic-volume"
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 4096
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "e1544331-5104-4f0a-9f42-95f5def0b255"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "9c68e280-cbc3-45d7-b5ce-45324d447263"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "elasticsearchstratio-2-role": [
+          {
+            "name": "disk",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 100
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "76d1cc29-3065-499a-b432-3857b436960d"
+                  }
+                ]
+              }
+            },
+            "disk": {
+              "persistence": {
+                "id": "ba50538b-1087-40cc-acbd-233edca92b38",
+                "principal": "elasticsearchstratio-2-principal"
+              },
+              "volume": {
+                "mode": "RW",
+                "container_path": "container-path"
+              }
+            }
+          },
+          {
+            "name": "ports",
+            "type": "RANGES",
+            "ranges": {
+              "range": [
+                {
+                  "begin": 31508,
+                  "end": 31508
+                }
+              ]
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "8584928e-023e-467c-94c3-4ac5660ee472"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mem",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 2048
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "acedea23-b792-489f-b214-1fe9d3e3fbc9"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "cpus",
+            "type": "SCALAR",
+            "scalar": {
+              "value": 0.5
+            },
+            "role": "elasticsearchstratio-2-role",
+            "reservation": {
+              "principal": "elasticsearchstratio-2-principal",
+              "labels": {
+                "labels": [
+                  {
+                    "key": "resource_id",
+                    "value": "87b92718-aa2f-4560-bea2-8ac10ae061a7"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "used_resources_full": [
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 5
+          },
+          "role": "*"
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 7758
+          },
+          "role": "*"
+        },
+        {
+          "name": "cpus",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 0.5
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "565e3682-f9d9-41ae-8b47-5164c9a0a573"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "mem",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 4096
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "861f4f97-4583-4838-bcfd-1cbb8b3ec676"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "ports",
+          "type": "RANGES",
+          "ranges": {
+            "range": [
+              {
+                "begin": 1026,
+                "end": 1026
+              },
+              {
+                "begin": 31502,
+                "end": 31502
+              }
+            ]
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "95cbfcb3-13f9-4d65-bea8-dd569032906e"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "disk",
+          "type": "SCALAR",
+          "scalar": {
+            "value": 1000
+          },
+          "role": "elasticsearchstratio-4-role",
+          "reservation": {
+            "principal": "elasticsearchstratio-4-principal",
+            "labels": {
+              "labels": [
+                {
+                  "key": "resource_id",
+                  "value": "cddfeb9c-0e45-4ba7-8c11-59cde3329925"
+                }
+              ]
+            }
+          },
+          "disk": {
+            "persistence": {
+              "id": "3df1b653-d62c-44a9-837a-8efe99b4898a",
+              "principal": "elasticsearchstratio-4-principal"
+            },
+            "volume": {
+              "mode": "RW",
+              "container_path": "elastic-volume"
+            }
+          }
+        },
+        {
+          "name": "ports",
+          "type": "RANGES",
+          "ranges": {
+            "range": [
+              {
+                "begin": 4040,
+                "end": 4040
+              },
+              {
+                "begin": 11052,
+                "end": 11053
+              }
+            ]
+          },
+          "role": "*"
+        }
+      ],
+      "offered_resources_full": []
+    }
+  ]
+}

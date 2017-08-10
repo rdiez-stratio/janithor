@@ -23,8 +23,8 @@ public class MesosApi {
     private static final Logger LOG = LoggerFactory.getLogger(MesosApi.class);
 
     private ObjectMapper MAPPER = new ObjectMapper();
+    private String endpointsPrefix = EndpointPrefix.EMPTY.toString();
     private MesosInterface mesosInterface;
-    private String endpointsPrefix;
 
     public enum EndpointPrefix {
         MASTER, MESOS, EMPTY;
@@ -40,18 +40,18 @@ public class MesosApi {
         }
     }
 
+    public MesosApi() {
+    }
+
     public MesosApi(String mesosMasterUrl) {
-        this.endpointsPrefix = EndpointPrefix.EMPTY.toString();
         this.mesosInterface = HTTPUtils.buildBasicInterface(mesosMasterUrl, MesosInterface.class);
     }
 
     public MesosApi(String accessToken, String mesosMasterUrl) {
-        this.endpointsPrefix = EndpointPrefix.EMPTY.toString();
         this.mesosInterface = HTTPUtils.buildTokenBasedInterface(accessToken, mesosMasterUrl, MesosInterface.class);
     }
 
     public MesosApi(String principal, String secret, String mesosMasterUrl) {
-        this.endpointsPrefix = EndpointPrefix.EMPTY.toString();
         this.mesosInterface = HTTPUtils.buildSecretBasedInterface(principal, secret, mesosMasterUrl, MesosInterface.class);
     }
 
@@ -78,7 +78,7 @@ public class MesosApi {
             if (!hasEndpointPrefix()) mesosCall = mesosInterface.findResources();
             else mesosCall = mesosInterface.findResources(getEndpointsPrefix());
 
-            Response<ResponseBody> response = mesosCall.execute();
+            Response<ResponseBody> response = mesosCall.clone().execute();
             LOG.info("findResourcesFor " + response.message());
             if (response.code() == HTTPUtils.HTTP_OK_CODE) {
                 JsonQuery q = JsonQuery.compile(".slaves[]|.id=\""+slaveId+"\"|.reserved_resources_full.\""+role+"\"[]?");
@@ -94,7 +94,7 @@ public class MesosApi {
             }
 
         } catch (IOException e) {
-            LOG.info("Unregister failure with message " + e.getMessage());
+            LOG.info("findResourcesFor failure with message " + e.getMessage());
             return null;
         }
     }
@@ -122,7 +122,7 @@ public class MesosApi {
                 if (!hasEndpointPrefix()) mesosCall = mesosInterface.unreserve(slaveId, "[" + resourceJson + "]");
                 else mesosCall = mesosInterface.unreserve(getEndpointsPrefix(), slaveId, "[" + resourceJson + "]");
 
-                Response<ResponseBody> execute = mesosCall.execute();
+                Response<ResponseBody> execute = mesosCall.clone().execute();
                 code = execute.code();
                 LOG.info("Unregister standard resource returned {}", code);
             } else {
@@ -133,7 +133,7 @@ public class MesosApi {
             System.out.println(code);
             return code;
         } catch (Exception e) {
-            LOG.info("Unregister failure with message " + e.getMessage());
+            LOG.info("unreserveResourceFor failure with message " + e.getMessage());
             return -1;
         }
     }
@@ -158,7 +158,7 @@ public class MesosApi {
             // destroy the volume
             if (!hasEndpointPrefix()) mesosCall = mesosInterface.destroyVolumes(slaveId, "[" + resourceJson + "]");
             else mesosCall = mesosInterface.destroyVolumes(getEndpointsPrefix(), slaveId, "[" + resourceJson + "]");
-            response = mesosCall.execute();
+            response = mesosCall.clone().execute();
             LOG.info("unreserveVolumesFor " + response.message());
             if (response.code() == HTTPUtils.UNRESERVE_OK_CODE) {
                 // remove "disk" from JSON before unregistering resource
@@ -167,13 +167,13 @@ public class MesosApi {
 
                 // unreserve the resource
                 mesosCall = mesosInterface.unreserve(slaveId, "[" + MAPPER.writeValueAsString(result) + "]");
-                response = mesosCall.execute();
+                response = mesosCall.clone().execute();
             } else {
                 LOG.error("Unable to destroy volume, resource ");
             }
             return response.code();
         } catch (IOException e) {
-            LOG.info("Unregister failure with message " + e.getMessage());
+            LOG.info("unreserveVolumesFor failure with message " + e.getMessage());
             return -1;
         }
     }
@@ -193,11 +193,11 @@ public class MesosApi {
         try {
             if (!hasEndpointPrefix()) mesosCall = mesosInterface.teardown(frameworkId);
             else mesosCall = mesosInterface.teardown(getEndpointsPrefix(), frameworkId);
-            Response<ResponseBody> response = mesosCall.execute();
+            Response<ResponseBody> response = mesosCall.clone().execute();
             LOG.info("teardown " + response.message());
             return (response.code() == HTTPUtils.HTTP_OK_CODE);
         } catch (IOException e) {
-            LOG.info("Unregister failure with message " + e.getMessage());
+            LOG.info("teardown failure with message " + e.getMessage());
             return false;
         }
     }
@@ -230,7 +230,7 @@ public class MesosApi {
             if (!hasEndpointPrefix()) mesosCall = mesosInterface.findFrameworks();
             else mesosCall = mesosInterface.findFrameworks(getEndpointsPrefix());
 
-            Response<ResponseBody> response = mesosCall.execute();
+            Response<ResponseBody> response = mesosCall.clone().execute();
             LOG.info("findFrameworkId " + response.message());
             if (response.code() == HTTPUtils.HTTP_OK_CODE) {
                 String includeInactives = active?" and .active==true":" and .active==false";
@@ -258,8 +258,8 @@ public class MesosApi {
                 LOG.info("Error finding framework ("+serviceName+","+role+","+principal+"): " + response
                         .code() + " and message: " + response.errorBody());
             }
-        } catch (IOException e) {
-            LOG.info("Unregister failure with message " + e.getMessage());
+        } catch (Exception e) {
+            LOG.info("findFrameworkId failure with message " + e.getMessage());
         } finally {
             return frameworkId;
         }
@@ -278,7 +278,7 @@ public class MesosApi {
             if (!hasEndpointPrefix()) mesosCall = mesosInterface.findFrameworks();
             else mesosCall = mesosInterface.findFrameworks(getEndpointsPrefix());
 
-            Response<ResponseBody> response = mesosCall.execute();
+            Response<ResponseBody> response = mesosCall.clone().execute();
             LOG.info("findSlavesForFramework " + response.message());
             if (response.code() == HTTPUtils.HTTP_OK_CODE) {
                 JsonQuery q = JsonQuery.compile(".frameworks[]|select(.id==\""+frameworkId+"\").tasks[].slave_id");
@@ -297,11 +297,14 @@ public class MesosApi {
             } else {
                 LOG.info("Error finding slaves for framework ({}) returned {} - {}", frameworkId, response.code(), response.errorBody());
             }
-        } catch (IOException e) {
-            LOG.info("Unregister failure with message " + e.getMessage());
+        } catch (Exception e) {
+            LOG.info("findSlavesForFramework failure with message " + e.getMessage());
         } finally {
             return slaveIds;
         }
     }
 
+    public void setMesosInterface(MesosInterface mesosInterface) {
+        this.mesosInterface = mesosInterface;
+    }
 }

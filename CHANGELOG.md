@@ -2,7 +2,8 @@
 
 ## 0.2.0 (upcoming)
 
-* Pending changelog
+* Logger refactor
+* Improved framework finder
 
 ## 0.1.1 (upcoming)
 
